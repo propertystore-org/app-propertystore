@@ -1,0 +1,39 @@
+@import '../job-cards/job-cards.component.scss';
+@import '../../../../../assets/styles/color';
+
+.main-list {
+  background: $white
+}
+
+.create-cta {
+  text-align: left;
+}
+
+.modal {
+  left: 12%;
+  width: 80%;
+}
+
+
+.line-items,
+.headers {
+  grid-template-columns: 20%  15% 15% 15% 20% auto;
+}
+
+.material-icons {
+  position: relative;
+  margin: 0;
+  font-size: 19px;
+  color: $white;
+  top: .2em;
+  left: 1em;
+}
+
+.total{
+  text-align: left;
+  font-weight: 700;
+  padding: 1em;
+  font-size: 1.2em;
+  margin: 0;
+  margin-bottom: 10em;
+}

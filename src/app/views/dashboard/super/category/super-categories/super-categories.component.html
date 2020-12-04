@@ -1,0 +1,103 @@
+<div class="main-list _super" *ngIf="category">
+  <div class="create-cta">
+    <div class="">
+      <h1>
+        {{heading}}
+      </h1>
+    </div>
+    <div class="action">
+      <input type="search" placeholder="Filter by Category Name ">
+    </div>
+    <div class="action">
+      <button mat-button class="mat-primary sec" type="button"  (click)="onAddEditCategory('child')">
+        {{ctaCreate}}
+      </button>
+    </div>
+  </div>
+
+
+  <div class="filters">
+    <mat-chip-list aria-label="variations selection">
+      <span *ngFor="let item of categories; let i = index">
+        <mat-chip color="primary" *ngIf="item.CategoryType === 'Parent'" [selected]="item.IsSelected"
+          (click)="view(item, i)">
+          <span class="material-icons _danger" *ngIf="item.StatusId === '2'">
+            disabled_by_default
+          </span>
+          <span class="material-icons _danger" *ngIf="item.StatusId === '3'">
+            delete_outline
+          </span>
+          {{item.Name}}
+        </mat-chip>
+      </span>
+
+      | <mat-chip color="primary" class="add" (click)="onAddEditCategory('parent')">
+        Add new
+      </mat-chip> | <input class="checkbox" type="checkbox" (click)="filter()" [checked]="showActive"> Show Active only
+    </mat-chip-list>
+    <a class="a-edit" (click)="onAddEditCategory(category)">Edit {{category.Name}}</a>
+  </div>
+
+
+  <div class="headers">
+
+    <div class="item">
+      Image
+    </div>
+    <div class="item">
+      Name
+    </div>
+    <div class="item">
+      <span *ngIf="isSub">
+        Parent category
+      </span>
+    </div>
+  </div>
+
+
+  <div class="line-items" *ngFor="let item of category.Children" (click)="edit(item)">
+
+    <div class="item np">
+      <div class="icon" *ngIf="item.ImageUrl">
+        <div class="user-dp-image">
+          <img [src]="item.ImageUrl" alt="">
+        </div>
+      </div>
+
+      <div class="icon" *ngIf="!item.ImageUrl">
+        <div class="user-dp-image">
+          <img src="assets/images/icons/add.svg" class="img-ph" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <h1>
+        {{item.Name}} {{item.Surname}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        {{item.Email}}
+        <span class="code">
+          {{item.PhoneNumber}}
+        </span>
+      </h1>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+
+<div class="overlay" *ngIf="showModal" (click)="closeModal()"></div>
+<div class="modal" *ngIf="showModal">
+  <div class="close" (click)="closeModal()">
+    <span class="material-icons">
+      west
+    </span> {{modalHeading}}
+  </div>
+  <app-super-add-adit-category [category]="addEditCategory"></app-super-add-adit-category>
+</div>

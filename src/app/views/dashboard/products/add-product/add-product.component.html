@@ -1,0 +1,98 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="main">
+
+  <div class="page-section">
+
+    <div class="main-list">
+
+      <div class="form-section">
+        <div class="col-1-of-2">
+          <div class="col">
+            <div class="detail">
+              <label for="name">Mandate Type</label>
+              <select [(ngModel)]="product.StatusId">
+                <option value="1">Sale</option>
+                <option value="2">Rental</option>
+              </select>
+            </div>
+            <div class="detail">
+              <label for="name">Property Name *</label>
+              <input type="text" [(ngModel)]="product.Name" placeholder="e.g. Four bedroom house for sale">
+            </div>
+            <div class="detail" *ngIf="product.PriceFrom == 0">
+              <label for="name">Price (ZAR)</label>
+              <input type="number" [(ngModel)]="product.RegularPrice" placeholder="How much your selling for?">
+            </div>
+
+            <div class="detail" *ngIf="product.PriceFrom > 0">
+              <label for="name">Price (ZAR)</label>
+              <span class="range">
+                {{product.PriceFrom  | currency:'R'}} - {{product.PriceTo  | currency:'R'}}
+              </span>
+            </div>
+            <div class="detail" *ngIf="parentCategories && parentCategories.length">
+              <label for="name">Property catergory</label>
+              <select [(ngModel)]="product.ParentCategoryGuid" (change)="selectCategory($event.target.value)">
+                <option *ngFor="let pc of parentCategories" [ngValue]="pc.CategoryId"> {{pc.Name}}</option>
+              </select>
+            </div>
+
+            <div class="detail" *ngIf="chilndrenCategories && chilndrenCategories.length">
+              <label for="name">Property sub catergory</label>
+              <select [(ngModel)]="product.CategoryGuid"> 
+                <option *ngFor="let cc of chilndrenCategories" [ngValue]="cc.CategoryId"> {{cc.Name}}</option>
+              </select>
+            </div>
+
+            <div class="detail">
+              <label for="name">Property Status</label>
+              <select [(ngModel)]="product.StatusId">
+                <option value="1">Active</option>
+                <option value="2">In-Active</option>
+                <option value="3">Deleted</option>
+              </select>
+            </div>
+            <div class="upload-preview">
+              <div class="upload">
+                <!-- <label for="name">Product image</label> -->
+                <input type="file" #file placeholder="Choose file" multiple (change)="uploadFile(file.files)"
+                  style="display:none;">
+                <button mat-button class="btn-uplaod" (click)="file.click()">
+                  📷 Set property main image
+                </button>
+              </div>
+              <div class="preview">
+                <img *ngIf="product.FeaturedImageUrl" [src]="product.FeaturedImageUrl" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="detail">
+              <div class="body quill">
+                <label for="name">Property Description</label>
+                <quill-editor [styles]="editorStyle" [modules]="modules" [(ngModel)]="product.Description">
+                </quill-editor>
+              </div>
+
+              <div class="create-cta">
+                <div class="action">
+                  <button mat-button class="mat-primary" [disabled]="!product.Name" type="button"
+                    (click)="saveProduct()">
+                    Save Property
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+    </div>
+  </div>

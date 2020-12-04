@@ -1,0 +1,59 @@
+@import '../../../../../assets/styles/color';
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10%;
+  background: $primary;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+
+  @media only screen and (max-width: 600px) {
+    position: fixed;
+    width: 80%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    display: none;
+  }
+
+  .logo {
+    text-align: center;
+    padding: 4em 0;
+
+    @media only screen and (max-width: 600px) {
+      text-align: left;
+    }
+
+    img {
+      width: 5em;
+      @media only screen and (max-width: 600px) {
+        width: 8em;
+      }
+    }
+  }
+
+  ul {
+    li {
+      padding: 0;
+
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: .8em;
+        display: block;
+        padding: 1em 2em;
+      }
+    }
+  }
+}
+
+
+.active-link {
+  // background: $white;
+  background: #34495e;
+  // color: $primary !important;
+}

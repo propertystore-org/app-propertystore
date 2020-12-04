@@ -1,0 +1,7 @@
+<div *ngIf="categories" class="all">
+  <app-home-nav [showNav]="true" [categories]="categories" (selectedItem)="onNavItemClicked($event)"></app-home-nav>
+  <app-product-section [selectedCategory]="selectedCategory"></app-product-section>
+  <!-- <pre>
+      {{selectedCategory | json}}
+  </pre> -->
+</div>

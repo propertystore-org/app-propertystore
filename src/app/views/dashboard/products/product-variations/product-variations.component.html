@@ -1,0 +1,76 @@
+<div class="main-list _super" *ngIf="variations && variations.length && product">
+
+  <div class="filters">
+    <mat-chip-list aria-label="variations selection">
+      <mat-chip color="primary" *ngFor="let item of variations; let i = index" [selected]="item.IsSelected"
+        (click)="view(item, i)">
+        Product {{item.Name}}(s)
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <div class="headers">
+
+    <div class="item">
+      Option
+    </div>
+    <div class="item" *ngIf="variations[index].Name == 'Color'">
+      Visual
+    </div>
+    <div class="item">
+      Select
+    </div>
+
+  </div>
+
+
+  <div class="line-items" *ngFor="let item of variations[index].VariationsOptions" (click)="edit(item)">
+
+
+    <div class="item">
+      <input type="text" [(ngModel)]="item.Name" disabled>
+
+    </div>
+    <div class="item" *ngIf="variations[index].Name == 'Color'">
+      <input class="color-input" type="color" disabled [(ngModel)]="item.Description">
+    </div>
+    <div class="item">
+      <input class="color-input" type="checkbox" [(ngModel)]="item.IsSelected"
+        [disabled]="item.Class && item.Class.length">
+    </div>
+  </div>
+
+
+  <div class="line-items">
+    <div class="item">
+      <input type="text" [(ngModel)]="newOption.Name" (change)="addVariationOption()">
+    </div>
+    <div class="item" *ngIf="variations[index].Name == 'Color'">
+      <input class="color-input" [(ngModel)]="newOption.Description" (change)="addVariationOption()" type="color">
+    </div>
+
+  </div>
+
+  <div class="create-cta">
+    <div class="action">
+      <button mat-button class="mat-primary" [disabled]="!product.Name" type="button" (click)="saveProduct()">
+        Save product
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="overlay" *ngIf="showModal" (click)="closeModal()"></div>
+<div class="modal" *ngIf="showModal">
+  <div class="close" (click)="closeModal()">
+    <span class="material-icons">
+      west
+    </span> {{modalHeading}}
+  </div>
+
+  <div class="body">
+  </div>
+</div>

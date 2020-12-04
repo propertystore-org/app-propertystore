@@ -1,0 +1,55 @@
+@import '../../../../../assets/styles/color';
+$table-cols : repeat(7, 14.2854%);
+
+.headers {
+  grid-template-columns: $table-cols;
+}
+
+.line-items {
+  grid-template-columns: $table-cols;
+
+  .item {
+    cursor: pointer;
+  }
+
+  &:hover {
+    background: $cloud;
+
+    .item {
+      border-right: 2px solid $white;
+    }
+  }
+
+}
+
+
+
+.create-cta {
+  display: grid;
+  grid-template-columns: 50% 30% auto;
+
+  input,
+  button {
+    width: 90%;
+    margin: .5em auto;
+    float: right;
+  }
+
+  input {
+    padding: .8em 1.2em;
+    border: 1px solid $silver;
+  }
+
+  h1 {
+    font-size: 1.8em;
+    padding: .5em 0;
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+
+.item{
+  padding: 1em;
+
+}

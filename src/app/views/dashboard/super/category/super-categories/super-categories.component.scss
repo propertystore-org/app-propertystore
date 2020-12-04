@@ -1,0 +1,27 @@
+@import '../../../../../../assets/styles/color';
+
+.modal {
+  width: 70%;
+  left: 15.5%;
+
+  .mat-primary {
+    width: 100%;
+  }
+}
+
+.checkbox {
+  margin: 0 .5em;
+  margin-left: 2em;
+}
+
+.material-icons {
+  top: 0;
+  font-size: 1.2em;
+
+
+}
+
+
+._danger {
+    color: $danger;
+  }

@@ -1,0 +1,111 @@
+<div *ngIf="categories" class="all">
+  <app-home-nav [showNav]="true" [categories]="categories" (selectedItem)="onNavItemClicked($event)"></app-home-nav>
+  <div class="product-section col-1-of-1">
+    <div class="product-section-container">
+      <div class="home-container" *ngIf="product">
+        <app-home-toolbar-navigation [showBag]="false"></app-home-toolbar-navigation>
+        <div class="content">
+
+          <!-- <pre>
+            {{product | json}}
+          </pre> -->
+          <div class="col-1-of-2">
+            <div class="product-images">
+
+              <div class="thumbs">
+                <span>
+                  <!-- <div *ngFor="let image of [1,1,1]">
+                    <img src="assets/images/common/place-holder-image.svg" alt="">
+                  </div> -->
+                </span>
+
+              </div>
+
+              <div class="main-image">
+                <img [src]="product.FeaturedImageUrl" alt="">
+              </div>
+            </div>
+            <div class="product-information">
+              <h1 class="h1">
+                {{product.Name}}
+              </h1>
+
+              <h1 class="price">
+                {{product.RegularPrice | currency:'R'}}
+              </h1>
+
+              <div *ngIf="sizes" class="label">Size:</div>
+              <div *ngIf="sizes" class="sizes">
+                <div *ngFor="let option of sizes.ProductVariationOptions" class="size-btn">
+                  {{option.OptionName}}
+                </div>
+              </div>
+
+              <div *ngIf="colors" class="label">Colour:</div>
+              <ul *ngIf="colors" class="colors">
+                <li  *ngFor="let option of colors.ProductVariationOptions" [ngStyle] = "{background: option.Description}" (click)="selectColor(option)"></li>
+              </ul>
+
+              <div class="action">
+                <button class="mat-primary add-to-cart" mat-button color="primary" (click)="addCart(product)">
+                  Add to cart
+                </button>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="overlay" *ngIf="showModal" (click)="closeModal()"></div>
+      <div class="modal" *ngIf="showModal">
+        <div class="close" (click)="closeModal()">
+          <span class="material-icons">
+            west
+          </span> {{modalHeading}}
+        </div>
+
+        <div class="body">
+          <div class="cart-item" *ngFor="let item of orderProducts">
+            <div class="item">
+              <div class="icon" *ngIf="item.FeaturedImageUrl">
+                <div class="user-dp-image">
+                  <img [src]="item.FeaturedImageUrl" alt="">
+                </div>
+              </div>
+
+              <div class="icon" *ngIf="!item.FeaturedImageUrl">
+                <div class="user-dp-image">
+                  <img src="assets/images/icons/add.svg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <h1>
+                {{item.Name}}
+                <span class="price">
+                  1 x {{item.RegularPrice  | currency:'R'}}
+                </span>
+              </h1>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button class="mat-primary add-to-cart" mat-button color="primary" (click)="checkout()">
+              Checkout
+            </button>
+            <button class="mat-primary secondary" mat-button color="primary" (click)="continueShopping()">
+              Continue shopping
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

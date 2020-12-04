@@ -1,0 +1,101 @@
+<div class="main-list">
+
+  <div class="create-cta">
+    <div class="">
+      <h1>
+        Job work items ({{jobWorks?.length || 0}})
+      </h1>
+    </div>
+    <div class="action">
+      <input type="search" placeholder="Filter by job work item tittle">
+    </div>
+    <div class="action">
+      <button mat-button class="mat-primary sec" type="button" (click)="add()">
+        Add work item
+      </button>
+    </div>
+  </div>
+  <div class="" *ngIf="jobWorks">
+    <div class="headers">
+      <div class="item main-col">
+        Tittle
+      </div>
+      <div class="item">
+        Created Date
+      </div>
+      <div class="item">
+        Quantity
+      </div>
+      <div class="item">
+        Total Cost
+      </div>
+      <div class="item">
+        Due Date
+      </div>
+      <div class="item tac">
+        Status
+      </div>
+
+    </div>
+    <div class="line-items" *ngFor="let item of jobWorks">
+      <div class="item pt" (click)="view(item)">
+        <h1>
+          {{item.Tittle}}
+        </h1>
+      </div>
+
+
+      <div class="item pt" (click)="view(item)">
+        <h1>
+          {{item.CreateDate | date: 'mediumDate'}}
+        </h1>
+      </div>
+
+      <div class="item pt" (click)="view(item)">
+        <h1>
+          {{item.Quantity}} {{item.Units}} x {{item.TotalCost| currency:'R'}}
+        </h1>
+      </div>
+      <div class="item pt" (click)="view(item)">
+        <h1>
+          {{(item.TotalCost *  item.Quantity)| currency:'R'}}
+        </h1>
+      </div>
+      <div class="item pt" (click)="view(item)">
+        <h1 *ngIf="item.StartDate && item.DueDate">
+          {{item.DueDate | date: 'mediumDate'}}
+        </h1>
+        <h1 *ngIf="!item.StartDate ||  !item.DueDate">Not set</h1>
+      </div>
+      <div class="item np">
+        <div class="status" [ngClass]="item.Class" (click)="showOptions(item)">
+          {{item.Status}}
+        </div>
+        <div class="status-options" *ngIf="item.ShowOption" (mouseleave)="hideOptions()">
+          <div class="after"></div>
+          <div class="status" *ngFor="let status of systemStatuses" [ngClass]="status.class"
+            (click)="selectStatus(status, item)">
+            {{status.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="total">
+    Calculated cost: {{total  | currency:'R'}}
+  </div>
+
+</div>
+
+<div class="overlay" *ngIf="showModal" (click)="closeModal()"></div>
+<div class="modal" *ngIf="showModal">
+  <div class="close" (click)="closeModal()">
+    <span class="material-icons">
+      west
+    </span> {{modalHeading}}
+  </div>
+
+  <app-add-job-work-item [jobWork]="jobWork" (doneAddingJobWork)="doneAddingJobWork($event)"></app-add-job-work-item>
+</div>

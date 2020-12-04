@@ -1,0 +1,74 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="main">
+
+  <div class="page-section">
+
+    <div class="main-list">
+
+      <div class="form-section" *ngIf="jobWork">
+        <div class="col-1-of-2">
+          <div class="col">
+            <!-- <div class="detail">
+              <label for="name">Customer</label>
+
+              <input matInput placeholder="Customer" aria-label="Customer" [matAutocomplete]="auto"  [(ngModel)]="jobWork.CustomerName">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let customer of filteredStates | async" [value]="customer.Name + ' '+ customer.Surname" (click)="selectCustomer(customer)">
+                  <img class="example-option-img" aria-hidden [src]="customer.flag" height="25">
+                  <span>{{customer.Name}} {{customer.Surname}}</span>
+                </mat-option>
+              </mat-autocomplete>
+
+
+            </div> -->
+            <div class="detail">
+              <label for="name">Tittle *</label>
+              <input type="text" [(ngModel)]="jobWork.Tittle" placeholder="e.g. Cut the fabric">
+            </div>
+            <div class="detail">
+              <label for="name">Cost to do work</label>
+              <input type="number" [(ngModel)]="jobWork.TotalCost" placeholder="Helps to estimate costs">
+            </div>
+
+
+            <div class="detail">
+              <label for="name">Quantity</label>
+              <input type="number" [(ngModel)]="jobWork.Quantity">
+            </div>
+            <div class="detail">
+              <label for="name">Units</label>
+              <select [(ngModel)]="jobWork.Units">
+                <option value="Units">Units</option>
+                <option value="Miters">Miters</option>
+                <option value="Hours">Hours</option>
+              </select>
+
+            </div>
+
+
+          </div>
+
+          <div class="col">
+            <div class="detail">
+              <div class="body quill">
+                <label for="name">Work Notes</label>
+                <quill-editor [styles]="editorStyle" [modules]="modules" [(ngModel)]="jobWork.Description">
+                </quill-editor>
+                <button mat-button class="mat-primary" [disabled]="!jobWork.Tittle" type="button"
+                  (click)="saveJobWork()">
+                  Save Work
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+    </div>
+  </div>

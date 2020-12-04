@@ -1,0 +1,33 @@
+<div *ngIf="showNav">
+  <div class="topnav">
+    <div class="nav-items"
+         *ngFor="let item of navItems">
+      <a [routerLink]="item.Url"
+        [ngClass]="item.Class" (click)="navItemClicked(item)">
+        {{item.Label}}
+      </a>
+    </div>
+  </div>
+  <div class="toolbar">
+    <div class="col-1-of-3">
+      <div class="">
+        <div class="nav-items">
+        </div>
+        <div class="logo">
+          <img src="assets/images/common/logo.png"
+               alt="">
+        </div>
+      </div>
+      <div></div>
+      <div>
+        <div class="nav-items">
+          <a *ngFor="let item of toolbarItems" [routerLink]="item.Url"
+             (click)="actionClick()">
+            <img [src]="item.ImageUrl"
+                 alt="account">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

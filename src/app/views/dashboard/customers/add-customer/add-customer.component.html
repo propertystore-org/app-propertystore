@@ -1,0 +1,68 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="main">
+
+  <div class="page-section">
+
+    <div class="main-list">
+
+      <div class="form-section">
+        <div class="col-1-of-2">
+          <div class="col">
+            <div class="detail">
+              <label for="name">Customer Name *</label>
+              <input type="text" [(ngModel)]="customer.Name" placeholder="e.g. John">
+            </div>
+
+            <div class="detail">
+              <label for="name">Customer Surname</label>
+              <input type="text" [(ngModel)]="customer.Surname" placeholder="e.g. Mnisi">
+            </div>
+
+            <div class="detail">
+              <label for="name">Customer Email</label>
+              <input type="text" [(ngModel)]="customer.Email" placeholder="e.g. john.mnisi@gmail.com">
+            </div>
+
+            <div class="detail">
+              <label for="name">Phone Number</label>
+              <input type="text" [(ngModel)]="customer.PhoneNumber" placeholder="e.g. 084 001 0100">
+            </div>
+
+
+            
+
+            <button mat-button class="mat-primary" [disabled]="!customer.Name" type="button" (click)="save()">
+              Save customer
+            </button>
+          </div>
+
+          <div class="col">
+            <div class="detail">
+
+              <div class="upload-preview">
+                <div class="upload">
+                  <!-- <label for="name">Product image</label> -->
+                  <input type="file" #file placeholder="Choose file" multiple (change)="uploadFile(file.files)"
+                    style="display:none;">
+                  <button mat-button class="btn-uplaod" (click)="file.click()">
+                    📷 Set customer image
+                  </button>
+                </div>
+                <div class="preview">
+                  <img *ngIf="customer.Dp" [src]="customer.Dp" alt="">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+    </div>
+  </div>

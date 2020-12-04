@@ -1,0 +1,22 @@
+<div class="product-section col-1-of-1" *ngIf="selectedCategory">
+  <!-- <pre>
+      {{selectedCategory | json}}
+  </pre> -->
+  <div class="child" *ngFor="let child of selectedCategory.Children">
+    <div class="product-section-container" *ngIf="child.Products &&  child.Products.length">
+      <div class="banner">
+        <img [src]="child.ImageUrl" (click)="selectCategory(child)" alt="">
+        <button (click)="selectCategory(child)">{{child.Name}}</button>
+      </div>
+      <div class="product-detail col-1-of-5">
+        <div class="product-list" *ngFor="let product of child.Products; let i = index">
+          <app-product-section-card *ngIf="i < 5" [product]="product" [categoryName]="child.CategoryName">
+          </app-product-section-card>
+          <div class="see-more" *ngIf="i >= 5">
+            <a (click)="selectCategory(child)">See more {{child.Name}} </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

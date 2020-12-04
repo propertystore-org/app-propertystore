@@ -1,0 +1,97 @@
+<div class="main-list" *ngIf="products$ | async as products">
+  <div class="create-cta">
+    <div class="">
+      <h1>
+        Properties ({{products.length}})
+      </h1>
+    </div>
+    <div class="action">
+      <input type="search" placeholder="Filter by property Name ">
+    </div>
+    <div class="action">
+      <button mat-button class="mat-primary sec" type="button" (click)="add()">
+        Add new property
+      </button>
+    </div>
+  </div>
+
+  <div class="headers">
+
+    <div class="item">
+      Image
+    </div>
+    <div class="item">
+      Name
+    </div>
+    <div class="item">
+      Category
+    </div>
+
+    <div class="item">
+      Price
+    </div>
+  </div>
+
+
+  <div class="line-items" *ngFor="let item of products" (click)="view(item)">
+
+    <div class="item img">
+      <div class="icon" *ngIf="item.FeaturedImageUrl">
+        <div class="user-dp-image">
+          <img [src]="item.FeaturedImageUrl" alt="">
+        </div>
+      </div>
+
+      <div class="icon" *ngIf="!item.FeaturedImageUrl">
+        <div class="user-dp-image">
+          <img src="assets/images/icons/add.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <h1>
+        <!-- <span> Total</span> -->
+        {{item.Name}}
+        <span class="code">
+          {{item.Code}}
+        </span>
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        <!-- <span> Total</span> -->
+        {{item.ParentCategoryName}}
+        <span class="code">
+          {{item.CategoryName}}
+        </span>
+      </h1>
+    </div>
+    <div class="item" *ngIf="item.PriceFrom > 0">
+      <h1>
+        <!-- <span> Amount Due</span> -->
+        {{item.PriceFrom  | currency:'R'}} - {{item.PriceTo  | currency:'R'}}
+      </h1>
+    </div>
+    <div class="item" *ngIf="item.PriceFrom == 0">
+      <h1>
+        <!-- <span> Amount Due</span> -->
+        {{item.RegularPrice  | currency:'R'}}
+      </h1>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="overlay" *ngIf="showModal"></div>
+
+<div class="modal" *ngIf="showAddCustomer">
+  <div class="close" (click)="closeModal()">
+    <span class="material-icons">
+      west
+    </span> {{modalHeading}}
+  </div>
+
+  <!-- <app-add-learner (doneAdding)="doneAdding($event)"></app-add-learner> -->
+</div>
+<!-- <app-dash-loader *ngIf="showLoader"></app-dash-loader> -->

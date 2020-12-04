@@ -1,0 +1,140 @@
+<!-- <div class="togle" (click)="toggleNav()">T</div> -->
+<div class="nav">
+  <!-- <div class="logo">
+    <img src="assets/images/common/logo.png" alt="">
+  </div> -->
+
+  <div class="nav" *ngIf="isAdmin">
+    <div class="logo">
+      <img src="assets/images/common/logo.png" alt="">
+    </div>
+    <ul>
+      <!-- <li>
+        <a routerLink="/dashboard" routerLinkActive="active-link"  [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            dashboard
+          </span>
+           Dashboard
+        </a>
+      </li> -->
+
+      <li>
+        <a routerLink="/dashboard/properties" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            list
+          </span>
+          Properties
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/dashboard/agents" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            supervisor_account
+          </span>
+          Agents
+        </a>
+      </li>
+      <li>
+        <a routerLink="/dashboard/contacts" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            supervisor_account
+          </span>
+          Contacts
+        </a>
+      </li>
+
+      <!-- <li>
+        <a routerLink="/dashboard/invoices" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            library_books
+          </span>
+          Invoices
+        </a>
+      </li>
+      <li>
+        <a routerLink="/dashboard/jobs" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            playlist_add_check
+          </span>
+          Job cards
+        </a>
+      </li> -->
+
+
+    </ul>
+  </div>
+
+  <div class="nav" *ngIf="isSuper">
+    <div class="logo">
+      <img src="assets/images/common/logo.png" alt="">
+    </div>
+    <ul>
+      <!-- <li>
+        <a routerLink="/dashboard" routerLinkActive="active-link"  [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            dashboard
+          </span>
+           Dashboard
+        </a>
+      </li> -->
+
+      <li>
+        <a routerLink="/dashboard/super-categories" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            list
+          </span>
+          Categories
+        </a>
+      </li>
+      <li>
+        <a routerLink="/dashboard/super-variations" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            list
+          </span>
+          Variations
+        </a>
+      </li>
+
+      
+
+      <li>
+        <a routerLink="/dashboard/super-companies" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            supervisor_account
+          </span>
+          Companies
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/dashboard/invoices" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            library_books
+          </span>
+          Invoices
+        </a>
+      </li>
+      <li>
+        <a routerLink="/dashboard/invoices" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            library_books
+          </span>
+          Users
+        </a>
+      </li>
+      <li>
+        <a routerLink="/dashboard/jobs" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            playlist_add_check
+          </span>
+          Job cards
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+</div>

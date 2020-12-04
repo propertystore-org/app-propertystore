@@ -1,0 +1,68 @@
+<div class="main-list" *ngIf="companies">
+  <div class="create-cta">
+    <div class="">
+      <h1>
+        {{heading}}
+      </h1>
+    </div>
+    <div class="action">
+      <input type="search" placeholder="Filter by Category Name ">
+    </div>
+    <div class="action">
+      <button mat-button class="mat-primary sec" type="button" (click)="add()">
+        Add New Category
+      </button>
+    </div>
+  </div>
+
+
+
+  <div class="headers">
+
+    <div class="item">
+      Image
+    </div>
+    <div class="item">
+      Name
+    </div>
+    <div class="item">
+      <span *ngIf="isSub">
+        Parent category
+      </span>
+    </div>
+  </div>
+
+
+  <div class="line-items" *ngFor="let item of companies" (click)="view(item)">
+
+    <div class="item np">
+      <div class="icon" *ngIf="item.ImageUrl">
+        <div class="user-dp-image">
+          <img [src]="item.ImageUrl" alt="">
+        </div>
+      </div>
+
+      <div class="icon" *ngIf="!item.ImageUrl">
+        <div class="user-dp-image">
+          <img src="assets/images/icons/add.svg" class="img-ph" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <h1>
+        {{item.Name}} {{item.Surname}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        {{item.Email}}
+        <span class="code">
+          {{item.PhoneNumber}}
+        </span>
+      </h1>
+    </div>
+
+
+  </div>
+
+</div>

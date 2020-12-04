@@ -1,0 +1,59 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="main">
+
+  <div class="page-section">
+
+    <div class="main-list">
+
+      <div class="form-section">
+        <div class="col-1-of-2">
+          <div class="col">
+            <div class="detail">
+              <label for="name">Category Name *</label>
+              <input type="text" [(ngModel)]="category.Name" placeholder="e.g. Male">
+            </div>
+            <div class="detail">
+              <label for="name">Category Status</label>
+              <select [(ngModel)]="category.StatusId">
+                <option value="1">Active</option>
+                <option value="2">In-Active</option>
+                <option value="3">Deleted</option>
+              </select>
+            </div>
+
+
+            <button mat-button class="mat-primary" [disabled]="!category.Name" type="button" (click)="save()">
+              Save Category
+            </button>
+          </div>
+
+          <div class="col">
+            <div class="detail">
+
+              <div class="upload-preview">
+                <div class="upload">
+                  <!-- <label for="name">Product image</label> -->
+                  <input type="file" #file placeholder="Choose file" multiple (change)="uploadFile(file.files)"
+                    style="display:none;">
+                  <button mat-button class="btn-uplaod" (click)="file.click()">
+                    📷 Set Category image
+                  </button>
+                </div>
+                <div class="preview">
+                  <img *ngIf="category.ImageUrl" [src]="category.ImageUrl" alt="">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+    </div>
+  </div>

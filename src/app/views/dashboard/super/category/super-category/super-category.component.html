@@ -1,0 +1,22 @@
+<div class="main add-screen" *ngIf="category">
+
+  <div class="page-section">
+    <div class="hearder-cols">
+      <h3>
+        <span class="material-icons pointer" (click)="back()">
+          west
+        </span>
+        {{heading}}
+      </h3>
+    </div>
+    <div class="main-list">
+      <div class="more">
+        <mat-tab-group class="box-shadow" [selectedIndex]="selectedIndex">
+          <mat-tab label="1️⃣ Category Details">
+            <app-super-add-adit-category [category]="category"></app-super-add-adit-category>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+</div>

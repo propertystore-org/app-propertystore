@@ -1,0 +1,64 @@
+<div class="main-list" *ngIf="users">
+  <div class="create-cta">
+    <div class="">
+      <h1>
+        Agents ({{users.length}})
+      </h1>
+    </div>
+    <div class="action">
+      <input type="search" placeholder="Filter by Agent Name ">
+    </div>
+    <div class="action">
+      <button mat-button class="mat-primary sec" type="button" (click)="add()">
+        Add New Agent
+      </button>
+    </div>
+  </div>
+
+  <div class="headers">
+
+    <div class="item">
+      Image
+    </div>
+    <div class="item">
+      Name
+    </div>
+    <div class="item">
+      Contacts
+    </div>
+  </div>
+
+
+  <div class="line-items" *ngFor="let item of users" (click)="view(item)">
+
+    <div class="item np">
+      <div class="icon" *ngIf="item.Dp">
+        <div class="user-dp-image">
+          <img [src]="item.Dp" alt="">
+        </div>
+      </div>
+
+      <div class="icon" *ngIf="!item.Dp">
+        <div class="user-dp-image">
+          <img src="assets/images/icons/add.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <h1>
+        {{item.Name}} {{item.Surname}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        {{item.Email}}
+        <span class="code">
+          {{item.PhoneNumber}}
+        </span>
+      </h1>
+    </div>
+
+
+  </div>
+
+</div>

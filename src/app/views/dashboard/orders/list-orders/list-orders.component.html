@@ -1,0 +1,103 @@
+<div class="main-list" *ngIf="orders$ | async as orders">
+
+  <div class="create-cta">
+    <div class="">
+      <h1>
+        Invoices({{orders.length}})
+      </h1>
+    </div>
+    <div class="action">
+      <input type="search" placeholder="Filter by Customer Name or Invoice Number">
+    </div>
+    <div class="action">
+      <button mat-button class="mat-primary sec" type="button" (click)="add()">
+        Add New Invoice
+      </button>
+    </div>
+  </div>
+
+  <div class="headers">
+    <div class="item">
+      Customer
+    </div>
+    <div class="item">
+      Invoice Number
+    </div>
+    <div class="item">
+      Total
+    </div>
+
+    <div class="item">
+      Amount Due
+    </div>
+
+    <div class="item">
+      Invoice Date
+    </div>
+
+    <div class="item">
+      Due date
+
+    </div>
+    <div class="item">
+      Invoice Status
+    </div>
+  </div>
+  <div class="line-items" *ngFor="let item of orders" (click)="view(item)">
+    <div class="item">
+      <h1>
+        <!-- <span> Customer:</span> -->
+        {{item.Customer?.Name}} {{item.Customer?.Surname}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        <!-- <span> Invoice Number:</span> -->
+        {{item.OrderNo}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        <!-- <span> Total</span> -->
+        {{item.Total  | currency:'R'}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        <!-- <span> Amount Due</span> -->
+        {{item.Due  | currency:'R'}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        <!-- <span> Invoice Date</span> -->
+        {{item.InvoiceDate | date: 'shortDate'}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        <!-- <span> Due date</span> -->
+        {{item.DueDate | date: 'shortDate'}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1 class="warn">
+        <!-- <span> Status</span> -->
+        {{item.Status}}
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="showModal"></div>
+
+<div class="modal" *ngIf="showAddCustomer">
+  <div class="close" (click)="closeModal()">
+    <span class="material-icons">
+      west
+    </span> {{modalHeading}}
+  </div>
+
+  <!-- <app-add-learner (doneAdding)="doneAdding($event)"></app-add-learner> -->
+</div>
+<!-- <app-dash-loader *ngIf="showLoader"></app-dash-loader> -->

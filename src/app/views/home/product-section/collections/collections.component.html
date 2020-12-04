@@ -1,0 +1,22 @@
+<div *ngIf="categories" class="all">
+  <app-home-nav [showNav]="true" [categories]="categories" (selectedItem)="onNavItemClicked($event)"></app-home-nav>
+  <div class="product-section col-1-of-1">
+    <div class="product-section-container" *ngIf="catergory && catergory.Products &&  catergory.Products.length">
+      <div class="banner">
+        <!-- <img [src]="catergory.ImageUrl" alt=""> -->
+        <!-- <button>{{catergory.Name}}</button> -->
+
+        <h1>
+         Shop  {{catergory.Name}}
+        </h1>
+      </div>
+      <div class="product-detail col-1-of-5">
+        <div class="product-list" *ngFor="let product of catergory.Products; let i = index">
+          <app-product-section-card [product]="product" [categoryName]="product.CategoryName">
+          </app-product-section-card>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
