@@ -23,14 +23,23 @@ export class DashNavComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.accountService.currentUserValue;
+    if (!this.user) {
+      this.logout();
+      return false;
+    }
     this.isAdmin = this.user.UserType === ADMIN;
     this.isSuper = this.user.UserType === SUPER;
     if (this.isSuper) {
       // this.router.navigate([`/dashboard/super-categories`]);
     }
   }
-  toggleNav(){
-    this.showNav = !this.showNav
+  toggleNav() {
+    this.showNav = !this.showNav;
+  }
+
+  logout() {
+    this.accountService.updateUserState(null);
+    this.router.navigate(['']);
   }
 
 }

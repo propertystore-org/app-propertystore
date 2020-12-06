@@ -120,7 +120,9 @@ export class AddProductComponent implements OnInit {
     } else {
       this.productService.add(this.product).subscribe(data => {
         if (data) {
+          this.product = data;
           this.addingProductFinished.emit(data);
+
         }
       });
     }

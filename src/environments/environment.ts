@@ -1,23 +1,21 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
   production: false,
-  // API_URL: 'http://localhost:8200/api-propertystore',
-  // BASE_URL: 'http://localhost:4200',
-  API_URL: 'https://propertystore.co.za/api',
-  BASE_URL: 'https://propertystore.co.za',
+  API_URL: 'http://localhost:8200/api-propertystore',
+  BASE_URL: 'http://localhost:4200',
   ACCOUNT_TEST_EMAIL: 'principal@propertystore.co.za',
   ACCOUNT_TEST_PASSWORD: 'principal@propertystore.co.za',
   TEST_EMAIL_ACCOUNT: 'admin@tybo-services.co.za'
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+// export const environment = {
+//   production: false,
+//   // API_URL: 'http://localhost:8200/api-propertystore',
+//   // BASE_URL: 'http://localhost:4200',
+//   API_URL: 'https://propertystore.co.za/api',
+//   BASE_URL: 'https://propertystore.co.za',
+//   ACCOUNT_TEST_EMAIL: 'principal@propertystore.co.za',
+//   ACCOUNT_TEST_PASSWORD: 'principal@propertystore.co.za',
+//   TEST_EMAIL_ACCOUNT: 'admin@tybo-services.co.za'
+// };
+

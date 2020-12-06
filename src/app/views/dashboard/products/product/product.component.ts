@@ -107,8 +107,8 @@ export class ProductComponent implements OnInit {
           this.productService.updateProductState(data);
           if (this.ProductId === 'add') {
             this.ProductId = product.ProductSlug;
-            this.router.navigate(['dashboard/product', product.ProductSlug]);
-            this.selectedIndex = 1;
+            this.product = data;
+            // this.selectedIndex = 1;
           }
         }
       });

@@ -44,22 +44,15 @@
         </a>
       </li>
 
-      <!-- <li>
-        <a routerLink="/dashboard/invoices" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+    
+      <li class="logout">
+        <a (click)="logout()">
           <span class="material-icons">
-            library_books
+            power_settings_new
           </span>
-          Invoices
+          Logout
         </a>
       </li>
-      <li>
-        <a routerLink="/dashboard/jobs" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
-          <span class="material-icons">
-            playlist_add_check
-          </span>
-          Job cards
-        </a>
-      </li> -->
 
 
     </ul>
@@ -98,10 +91,11 @@
         </a>
       </li>
 
-      
+
 
       <li>
-        <a routerLink="/dashboard/super-companies" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/dashboard/super-companies" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}">
           <span class="material-icons">
             supervisor_account
           </span>
@@ -134,7 +128,17 @@
         </a>
       </li>
 
+      <li class="logout">
+        <a (click)="logout()">
+          <span class="material-icons">
+            power_settings_new
+          </span>
+          Logout
+        </a>
+      </li>
+
 
     </ul>
   </div>
+ 
 </div>
