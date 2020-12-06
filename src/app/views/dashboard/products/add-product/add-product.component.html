@@ -53,6 +53,15 @@
                 <option value="3">Deleted</option>
               </select>
             </div>
+            <div class="detail">
+              <label for="name">Property Type</label>
+              <select [(ngModel)]="product.StatusId">
+                <option value="Flat/Apartment">Flat/Apartment</option>
+                <option value="House">House</option>
+                <option value="Development">Development</option>
+                <option value="Townhouse">Townhouse</option>
+              </select>
+            </div>
             <div class="upload-preview">
               <div class="upload">
                 <!-- <label for="name">Product image</label> -->

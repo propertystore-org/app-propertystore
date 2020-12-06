@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Email } from 'src/models/email.model';
-import { UserModel } from 'src/models/user.model';
 import { AccountService } from 'src/services/account.service';
 import { EmailService } from 'src/services/communication';
 import { ADMIN, CUSTOMER, SYSTEM } from 'src/shared/constants';
@@ -50,7 +49,7 @@ export class SignUpComponent implements OnInit {
 
   }
 
-  onSubmit(model: UserModel) {
+  onSubmit(model: any) {
     model.Roles = [];
     model.Roles.push({ Name: CUSTOMER });
     this.showLoader = true;
@@ -68,7 +67,7 @@ export class SignUpComponent implements OnInit {
 
 
 
-  sendEmail(data: UserModel) {
+  sendEmail(data: any) {
     const emailToSend: Email = {
       Email: data.Email,
       Subject: 'Online Thalente: Welcome & Activation',

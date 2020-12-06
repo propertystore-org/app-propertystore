@@ -1,0 +1,107 @@
+@import '../../../assets/styles/color';
+
+
+.main-list {
+  background: $cloud;
+  max-height: 100vh;
+}
+
+.detail {
+  width: 100%;
+  padding: .7em 2em;
+
+  select,
+  input {
+    border: 1px solid $input-border;
+    padding: .6em 1em;
+  }
+
+  label {
+    display: block;
+    font-size: .7em;
+    font-weight: 600;
+  }
+}
+
+.upload {
+  padding: 1em 0;
+}
+
+
+.preview {
+  img {
+    width: 20%;
+    left: 2em;
+  }
+}
+
+
+
+.mat-primary {
+  width: 30%;
+  margin-top: 3em;
+}
+
+.form-section {
+  padding: 0;
+  width: 50%;
+  margin: .5em auto;
+  background: $white;
+  position: relative;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+
+  .col {
+    padding: 0;
+  }
+
+  .mat-primary {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 3em;
+    z-index: 1000;
+
+    @media only screen and (max-width: 600px) {
+      position: fixed;
+
+    }
+  }
+
+  .mb {
+    padding-bottom: 4em;
+  }
+
+}
+
+.logo {
+  text-align: center;
+  padding: 2em;
+
+  img {
+    height: 4em;
+  }
+}
+
+.col-1-of-2 {
+  margin-bottom: 0;
+  grid-gap: 0;
+
+  .detail {
+    padding: .1em 2em;
+
+  }
+}
+
+.btn-uplaod {
+  position: relative;
+  left: 2.2em;
+  width: 22.5em;
+
+  @media only screen and (max-width: 600px) {
+    width: 86%;
+  }
+}

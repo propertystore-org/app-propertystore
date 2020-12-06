@@ -1,0 +1,97 @@
+<div class="main">
+
+  <div class="page-section">
+
+    <div class="main-list">
+
+      <div class="form-section">
+        <div class="logo">
+          <img src="assets/images/common/logo.png" alt="">
+        </div>
+        <div class="col-1-of-2">
+          <div class="col">
+            <div class="detail">
+              <label for="name">Firm/ Company Name *</label>
+              <input type="text" [(ngModel)]="user.CompanyId" placeholder="Trading name">
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="upload-preview">
+              <div class="upload" *ngIf="!user.Dp">
+                <input type="file" #file placeholder="Choose file" multiple (change)="uploadFile(file.files)"
+                  style="display:none;">
+                <button mat-button class="btn-uplaod" (click)="file.click()">
+                  📷 Firm logo
+                </button>
+              </div>
+              <div class="preview">
+                <img *ngIf="user.Dp" [src]="user.Dp" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-1-of-2">
+          <div class="detail">
+            <label for="name">Your Name *</label>
+            <input type="text" [(ngModel)]="user.Name" placeholder="e.g. John">
+          </div>
+
+          <div class="detail">
+            <label for="name">Your Surname</label>
+            <input type="text" [(ngModel)]="user.Surname" placeholder="e.g. Mnisi">
+          </div>
+        </div>
+
+
+        <div class="detail">
+          <label for="name">Your company contact number</label>
+          <input type="text" [(ngModel)]="user.PhoneNumber" placeholder="e.g. 084 001 0100">
+        </div>
+
+
+        <div class="detail">
+          <label for="name">Your email address</label>
+          <input type="text" [(ngModel)]="user.Email" placeholder="e.g. john.mnisi@gmail.com">
+        </div>
+
+
+        <div class="detail mb">
+          <label for="name">Your password</label>
+          <input type="password" [(ngModel)]="user.Password" placeholder="e.g. 084 001 0100">
+        </div>
+
+
+
+
+
+
+        <button mat-button class="mat-primary" [disabled]="!user.Name || !user.CompanyId" type="button"
+          (click)="save()">
+          Start selling properties
+        </button>
+      </div>
+
+
+
+
+
+
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="message">
+  <p>
+    You have been registered successfully.
+
+    Our Administration Team now needs to verify your details.
+    After verification, you will receive an email with a link to log into your dashboard where you can set your password
+    and complete your agency profile.
+  </p>
+</div>

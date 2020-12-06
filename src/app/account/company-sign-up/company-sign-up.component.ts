@@ -4,14 +4,13 @@ import { User } from 'src/models';
 import { UploadService, UserService } from 'src/services';
 
 @Component({
-  selector: 'app-add-customer',
-  templateUrl: './add-customer.component.html',
-  styleUrls: ['./add-customer.component.scss']
+  selector: 'app-company-sign-up',
+  templateUrl: './company-sign-up.component.html',
+  styleUrls: ['./company-sign-up.component.scss']
 })
-export class AddCustomerComponent implements OnInit {
-  @Input() customer: User;
-  // <app-add-customer [user]="user">
+export class CompanySignUpComponent implements OnInit {
 
+  user: User;
   showLoader;
   constructor(
     private uploadService: UploadService,
@@ -19,6 +18,21 @@ export class AddCustomerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.user = {
+      UserId: '',
+      CompanyId: '',
+      UserType: 'Admin',
+      Name: '',
+      Surname: '',
+      Email: '',
+      PhoneNumber: '',
+      Password: '',
+      Dp: '',
+      CreateUserId: 'CompanySignUpComponent',
+      ModifyUserId: 'CompanySignUpComponent',
+      StatusId: '1',
+      UserToken: ''
+    };
   }
 
   public uploadFile = (files: FileList) => {
@@ -31,20 +45,21 @@ export class AddCustomerComponent implements OnInit {
       formData.append('file', file);
       formData.append('name', `tybo.${file.name.split('.')[file.name.split('.').length - 1]}`); // file extention
       this.uploadService.uploadFile(formData).subscribe(url => {
-        this.customer.Dp = `${environment.API_URL}/api/upload/${url}`;
+        this.user.Dp = `${environment.API_URL}/api/upload/${url}`;
       });
 
     });
   }
 
   save() {
-    if (this.customer.UserId && this.customer.UserId.length > 5) {
-      this.userService.updateUser(this.customer);
+    if (this.user.UserId && this.user.UserId.length > 5) {
+      this.userService.updateUser(this.user);
     }
     else {
-      this.userService.add(this.customer).subscribe(data => {
+      this.userService.add(this.user).subscribe(data => {
         console.log(data);
       });
     }
   }
+
 }

@@ -1,3 +1,91 @@
-.all{
-    background: #333333;
+@import '../../../../assets/styles/color';
+
+.products {
+  background: $cloud;
+  padding: 2em;
+  width: 70%;
+  margin: 0 auto;
+
+  .product {
+    width: 100%;
+    display: block;
+    background: #fff;
+    box-shadow: $box-shadow;
+    display: grid;
+    grid-template-columns: 45% auto;
+
+    margin: 1em 0;
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      padding: 1em;
+
+      .price {
+        font-weight: 600;
+        font-size: 1.8em;
+        color: $primary;
+      }
+
+      .name {}
+
+      .location {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.top {
+  background: $white;
+  padding: 1em 17%;
+
+  img {
+    height: 3em;
+  }
+}
+
+
+.banner {
+  height: 20em;
+  position: relative;
+  display: block;
+
+  .search {
+    position: absolute;
+    top: 7em;
+    left: 28%;
+    width: 40%;
+    height: 4em;
+    background: $black;
+    display: grid;
+    grid-template-columns: 60% 20% auto;
+    padding: 1em;
+    border-radius: 2em;
+
+    input {
+      width: 96%;
+      border-radius: 2em;
+      padding: .7em 1em;
+      background: $white;
+      border: none;
+    }
+
+    button{
+        width: 92%;
+        border-radius: 2em;
+        padding: .7em 1em;
+        background: #3498db;
+        color: $white;
+        border: none;
+        margin: 0 auto;
+    }
+  }
+
+  img {
+    width: 100%;
+    overflow: hidden;
+  }
 }

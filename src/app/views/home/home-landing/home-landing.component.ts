@@ -1,7 +1,8 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Category, LocaleProductsModel, Product } from 'src/models';
-import { LocaleDataService } from 'src/services';
+import { Observable } from 'rxjs';
+import { Category, LocaleProductsModel, Product, User } from 'src/models';
+import { AccountService, LocaleDataService, ProductService } from 'src/services';
 import { HomeShopService } from 'src/services/home-shop.service';
 
 @Component({
@@ -10,34 +11,34 @@ import { HomeShopService } from 'src/services/home-shop.service';
   styleUrls: ['./home-landing.component.scss']
 })
 export class HomeLandingComponent implements OnInit {
-  localeProducts: LocaleProductsModel[] = [];
-  selectedCategory: Category;
-  currentNav: string;
-  categories: Category[];
+  products$: Observable<Product[]>;
+  user: User;
+  modalHeading = 'Property for Sale in Sandown, Sandton';
+  showModal: boolean;
+  showAddCustomer: boolean;
   constructor(
-    private localeDataService: LocaleDataService,
-    private homeShopService: HomeShopService,
+    private productService: ProductService,str
+    private accountService: AccountService,
     private router: Router,
   ) { }
 
   ngOnInit() {
-    this.localeDataService.getLocaleProducts().subscribe(data => {
-      this.localeProducts = data;
-    });
-
-    this.homeShopService.getForShop().subscribe(data => {
-      this.categories = data || [];
-      this.homeShopService.updateCategoryListState(this.categories);
-      this.displayProducts(this.categories[0].CategoryId);
-
-    });
+    this.user = this.accountService.currentUserValue;
+    this.products$ = this.productService.productListObservable;
+    this.productService.getProducts('all');
   }
-  onNavItemClicked(categoryId: string) {
-    this.displayProducts(categoryId);
+  view(product: Product) {
+    this.productService.updateProductState(product);
+    this.router.navigate(['dashboard/product', product.ProductSlug]);
   }
-
-  displayProducts(categoryId: string) {
-    this.selectedCategory = this.categories.find(x => x.CategoryId === categoryId);
+  closeModal() {
+    this.showModal = false;
+    this.showAddCustomer = false;
+  }
+  add(){
+    // this.router.navigate(['dashboard/add-product']);
+    this.productService.updateProductState(null);
+    this.router.navigate(['dashboard/product', 'add']);
   }
 
 }

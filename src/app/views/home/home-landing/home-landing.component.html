@@ -1,7 +1,46 @@
-<div *ngIf="categories" class="all">
-  <app-home-nav [showNav]="true" [categories]="categories" (selectedItem)="onNavItemClicked($event)"></app-home-nav>
-  <app-product-section [selectedCategory]="selectedCategory"></app-product-section>
-  <!-- <pre>
-      {{selectedCategory | json}}
-  </pre> -->
+<div class="top">
+  <img src="assets/images/common/logo.png" alt="">
+</div>
+<div class="banner">
+  <img src="assets/images/common/bg.png" alt="">
+
+  <div class="search">
+    <div class="">
+      <input type="search">
+    </div>
+    <div class="">
+      <button>For Rent</button>
+    </div>
+    <div class="">
+      <button>For Buy</button>
+    </div>
+  </div>
+
+</div>
+<div class="main-list" *ngIf="products$ | async as products">
+  .
+  <div class="products">
+
+    <h1>
+      {{modalHeading}}
+    </h1>
+    <div class="product" *ngFor="let item of products" (click)="view(item)">
+      <div class="icon" *ngIf="item.FeaturedImageUrl">
+        <div class="user-dp-image">
+          <img [src]="item.FeaturedImageUrl" alt="">
+        </div>
+      </div>
+
+
+      <div class="details">
+
+        <p>
+          <span class="price"> {{item.RegularPrice  | currency:'R'}}</span>
+          <span class="name"> {{item.Name}}</span>
+          <span class="location"> Sandton</span>
+
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

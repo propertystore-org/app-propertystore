@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CompanySignUpComponent } from 'src/app/account/company-sign-up/company-sign-up.component';
 import { ForgotPasswordComponent, ResetPasswordComponent } from 'src/app/account/forgot-password';
 import { SignInComponent } from 'src/app/account/sign-in';
 import { SignUpComponent } from 'src/app/account/sign-up';
@@ -18,11 +19,12 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      // { path: '', component: HomeLandingComponent },
-      { path: '', component: SignInComponent },
+      { path: '', component: HomeLandingComponent },
+      // { path: '', component: SignInComponent },
       // { path: '', component: FiitingRoomComponent },
       { path: 'shop', component: ShopComponent },
       { path: 'sign-in', component: SignInComponent },
+      { path: 'firm-on-boarding', component:CompanySignUpComponent  },
       { path: 'sign-up', component: SignUpComponent },
       { path: 'forgot-password', component: ForgotPasswordComponent },
       { path: 'reset-password', component: ResetPasswordComponent },
@@ -51,7 +53,8 @@ export const declarations = [
   HomeToolbarNavigationComponent,
   CartComponent,
   CheckoutComponent,
-  CollectionsComponent
+  CollectionsComponent,
+  CompanySignUpComponent,
 ];
 
 @NgModule({

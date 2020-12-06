@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { User, UserModel } from 'src/models/user.model';
+import { User } from 'src/models/user.model';
 import { ADD_USER_URL, GET_USERS_URL, GET_USER_URL, UPDATE_USER_URL } from 'src/shared/constants';
 
 
@@ -70,8 +70,8 @@ export class UserService {
     return this.http.post<User>(`${this.url}/${ADD_USER_URL}`, user);
   }
 
-  register(model: UserModel) {
-    return this.http.post<UserModel>(`${this.url}/api/account/register.php`, model).pipe(map(user => {
+  register(model: any) {
+    return this.http.post<any>(`${this.url}/api/account/register.php`, model).pipe(map(user => {
       if (user) {
         return user;
       }

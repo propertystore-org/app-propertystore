@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { TokenModel, EmailGetRequestModel, ChangePasswordModel } from 'src/models/account.model';
-import { User, UserModel } from 'src/models/user.model';
+import { User } from 'src/models';
 
 
 @Injectable({
@@ -23,7 +23,7 @@ export class AccountService {
   hidePassword = true;
   constructor(
     private http: HttpClient,
-    private router: Router  ) {
+    private router: Router) {
     this._user = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
     this._loading = new BehaviorSubject<boolean>(false);
     this.user = this._user.asObservable();
@@ -41,13 +41,18 @@ export class AccountService {
   }
 
 
-  register(model: UserModel) {
-    return this.http.post<UserModel>(`${this.url}/api/account/register.php`, model).pipe(map(user => {
+  register(model: any) {
+    return this.http.post<any>(`${this.url}/api/account/register.php`, model).pipe(map(user => {
       if (user) {
         return user;
       }
     }));
   }
+
+  registerCompany(model: User) {
+    return this.http.post<User>(`${this.url}/api/account/register.php`, model);
+  }
+
 
 
   login(credentials: { email: any; password: any; }): Observable<User> {
