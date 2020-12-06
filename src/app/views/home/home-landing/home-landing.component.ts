@@ -17,7 +17,7 @@ export class HomeLandingComponent implements OnInit {
   showModal: boolean;
   showAddCustomer: boolean;
   constructor(
-    private productService: ProductService,str
+    private productService: ProductService,
     private accountService: AccountService,
     private router: Router,
   ) { }
