@@ -9,6 +9,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   imports: [
@@ -18,7 +21,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
 
     // QuillModule.forRoot()
 

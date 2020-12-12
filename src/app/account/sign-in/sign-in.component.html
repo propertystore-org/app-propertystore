@@ -1,14 +1,24 @@
-  <div class="account">
-    <app-home-toolbar-navigation></app-home-toolbar-navigation>
-    <form class="form" [formGroup]="rForm">
-      <div class="form-container">
-        <h1 class="h1">
-          Login to your account.
-        </h1>
+<mat-toolbar>
+  <div class="logo">
+    <img src="assets/images/common/logo.png" alt="">
+  </div>
+</mat-toolbar>
+
+<!--<div class="banner" >-->
+<!--  <div class="banner-text">-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="account">
+  <form class="form" [formGroup]="rForm">
+    <mat-card>
+      <mat-card-content>
+        <h1>Login to your account</h1>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label for="exampleInputEmail1">Email</label>
           <input type="email" class="form-control" formControlName="Email" id="exampleInputEmail1"
-            placeholder="Enter email">
+                 placeholder="Email">
           <div class="alert" *ngIf="!rForm.controls['Email'].valid  && rForm.controls['Email'].touched ">
             Email is required
           </div>
@@ -21,32 +31,88 @@
             </mat-icon>
           </label>
           <input type="password" [type]="hidePassword? 'password': 'text'" class="form-control"
-            formControlName="Password" id="exampleInputPassword1" placeholder="Password">
+                 formControlName="Password" id="exampleInputPassword1" placeholder="Password">
           <div class="showPassword" (click)="hidePassword = !hidePassword">
             <div class="alert" *ngIf="!rForm.controls['Password'].valid && rForm.controls['Password'].touched ">
               Password is required
             </div>
           </div>
         </div>
-
-        <div class="forgot-password">
-          <a routerLink="/forgot-password" class="link">forgot password ?</a>
-        </div>
         <div class="action">
-          <button class="mat-primary" mat-button color="primary" (click)="Login()" [disabled]="!rForm.valid">
-            Login
+          <button mat-flat-button class="mat-danger" (click)="Login()">
+            <b> Login </b>
           </button>
           <h5 class="error">{{error}}</h5>
         </div>
-        <div class="cta">
-          Don't have an account?
-          <a routerLink="/firm-on-boarding">
-            Register  your property firm</a>
-        </div>
-      </div>
+      </mat-card-content>
 
-    </form>
-  </div>
+      <!--      <div class="example-flex-container">-->
+      <!--        <div class="example-button-container">-->
+      <!--          <button mat-fab color="accent" >-->
+      <!--            <mat-icon>facebook</mat-icon>-->
+      <!--          </button>-->
+      <!--        </div>-->
+      <!--        <div class="example-button-container">-->
+      <!--          <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">-->
+      <!--            <mat-icon>twitter</mat-icon>-->
+      <!--          </button>-->
+      <!--        </div>-->
+      <!--        <div class="example-button-container">-->
+      <!--          <button mat-fab color="warn" aria-label="Example icon button with a home icon">-->
+      <!--            <mat-icon>youtube</mat-icon>-->
+      <!--          </button>-->
+      <!--        </div>-->
+      <!--      </div>-->
+    </mat-card>
 
 
-  <!-- <app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader> -->
+    <!--      <mdb-icon fab icon="facebook-f"></mdb-icon>-->
+    <!--      <div class="form-container">-->
+    <!--        <h1 class="h1">-->
+    <!--          Login to your account.-->
+    <!--        </h1>-->
+    <!--        <div class="form-group">-->
+    <!--          <label for="exampleInputEmail1">Email address</label>-->
+    <!--          <input type="email" class="form-control" formControlName="Email" id="exampleInputEmail1"-->
+    <!--            placeholder="Enter email">-->
+    <!--          <div class="alert" *ngIf="!rForm.controls['Email'].valid  && rForm.controls['Email'].touched ">-->
+    <!--            Email is required-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--          <label for="exampleInputPassword1">-->
+    <!--            Password-->
+    <!--            <mat-icon class="pointer" (click)="hidePassword = !hidePassword">-->
+    <!--              {{hidePassword ? 'visibility_off' : 'visibility'}}-->
+    <!--            </mat-icon>-->
+    <!--          </label>-->
+    <!--          <input type="password" [type]="hidePassword? 'password': 'text'" class="form-control"-->
+    <!--            formControlName="Password" id="exampleInputPassword1" placeholder="Password">-->
+    <!--          <div class="showPassword" (click)="hidePassword = !hidePassword">-->
+    <!--            <div class="alert" *ngIf="!rForm.controls['Password'].valid && rForm.controls['Password'].touched ">-->
+    <!--              Password is required-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+
+    <!--        <div class="forgot-password">-->
+    <!--          <a routerLink="/forgot-password" class="link">forgot password ?</a>-->
+    <!--        </div>-->
+    <!--        <div class="action">-->
+    <!--          <button class="mat-primary" mat-button color="primary" (click)="Login()" [disabled]="!rForm.valid">-->
+    <!--            Login-->
+    <!--          </button>-->
+    <!--          <h5 class="error">{{error}}</h5>-->
+    <!--        </div>-->
+    <!--        <div class="cta">-->
+    <!--          Don't have an account?-->
+    <!--          <a routerLink="/firm-on-boarding">-->
+    <!--            Register  your property firm</a>-->
+    <!--        </div>-->
+    <!--      </div>-->
+
+  </form>
+</div>
+
+
+<!-- <app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader> -->
