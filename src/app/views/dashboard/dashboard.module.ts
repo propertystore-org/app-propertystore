@@ -14,28 +14,36 @@ import { QuillModule } from 'ngx-quill';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        MatNativeDateModule,
-        DashboardRoutingModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatTabsModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        MatCheckboxModule,
-        MatRadioModule,
-        MatAutocompleteModule,
-        // MaterialModule,
-        MatSnackBarModule,
-        MatChipsModule,
-        QuillModule.forRoot(),
-        MatToolbarModule
+  imports: [
+    CommonModule,
+    MatNativeDateModule,
+    DashboardRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatAutocompleteModule,
+    // MaterialModule,
+    MatSnackBarModule,
+    MatChipsModule,
+    QuillModule.forRoot(),
+    MatToolbarModule,
+    MatCardModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule
 
-    ],
+  ],
   declarations: [...declarations]
 })
 export class DashboardModule { }

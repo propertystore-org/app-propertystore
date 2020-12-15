@@ -3,7 +3,7 @@ $table-cols : 35% 15% 15% auto;
 .headers {
   display: grid;
   grid-template-columns: $table-cols;
-  border-right: 1px solid $cloud;
+  //border-right: 1px solid $cloud;
   background: $primary;
   background: $white;
   padding: 0;
@@ -11,7 +11,7 @@ $table-cols : 35% 15% 15% auto;
 
   .item {
     font-weight: 700;
-    color: $primary;
+    //color: $primary;
     padding-left: 0;
     border-right: 2px solid $white;
     padding: .5em 1em;

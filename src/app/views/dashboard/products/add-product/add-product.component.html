@@ -40,7 +40,7 @@
 
             <div class="detail" *ngIf="chilndrenCategories && chilndrenCategories.length">
               <label for="name">Property sub catergory</label>
-              <select [(ngModel)]="product.CategoryGuid"> 
+              <select [(ngModel)]="product.CategoryGuid">
                 <option *ngFor="let cc of chilndrenCategories" [ngValue]="cc.CategoryId"> {{cc.Name}}</option>
               </select>
             </div>
@@ -87,10 +87,13 @@
 
               <div class="create-cta">
                 <div class="action">
-                  <button mat-button class="mat-primary" [disabled]="!product.Name" type="button"
-                    (click)="saveProduct()">
-                    Save Property
+                  <button mat-flat-button class="mat-danger" type="button" >
+                    <b>Add Property</b>
                   </button>
+<!--                  <button mat-button class="mat-primary" [disabled]="!product.Name" type="button"-->
+<!--                    (click)="saveProduct()">-->
+<!--                    Save Property-->
+<!--                  </button>-->
                 </div>
               </div>
             </div>

@@ -1,17 +1,21 @@
-<div class="main add-screen" *ngIf="product">
+<mat-toolbar>
+  <span>Manage Properties</span>
+</mat-toolbar>
 
-  <div class="page-section">
-  <div class="hearder-cols">
-    <!-- <img *ngIf="product.FeaturedImageUrl" [src]="product.FeaturedImageUrl" class="f-icon" alt="">
-    <div class="" *ngIf="!product.FeaturedImageUrl"></div> -->
-    <h3>
-      <span class="material-icons pointer" (click)="back()">
-        west
-      </span>
-      {{heading}}
-    </h3>
-  </div>
-    <div class="main-list">
+<div class="main-list">
+<div class="account" *ngIf="product">
+
+<!--  <div class="page-section">-->
+<!--  <div class="hearder-cols">-->
+<!--    &lt;!&ndash; <img *ngIf="product.FeaturedImageUrl" [src]="product.FeaturedImageUrl" class="f-icon" alt="">-->
+<!--    <div class="" *ngIf="!product.FeaturedImageUrl"></div> &ndash;&gt;-->
+<!--    <h3>-->
+<!--      <span class="material-icons pointer" (click)="back()">-->
+<!--        west-->
+<!--      </span>-->
+<!--      {{heading}}-->
+<!--    </h3>-->
+<!--  </div>-->
       <div class="more">
         <mat-tab-group class="box-shadow" (selectedTabChange)="onTabChanged($event)" [selectedIndex]="selectedIndex">
           <mat-tab label="1️⃣ Product Details">
@@ -29,4 +33,3 @@
       </div>
     </div>
   </div>
-</div>

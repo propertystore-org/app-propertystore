@@ -1,64 +1,119 @@
-<div class="main-list" *ngIf="users">
-  <div class="create-cta">
-    <div class="">
-      <h1>
-        Agents ({{users.length}})
-      </h1>
-    </div>
-    <div class="action">
-      <input type="search" placeholder="Filter by Agent Name ">
-    </div>
-    <div class="action">
-      <button mat-button class="mat-primary sec" type="button" (click)="add()">
-        Add New Agent
-      </button>
-    </div>
-  </div>
+<mat-toolbar>
+  <span>Manage Contacts</span>
+</mat-toolbar>
 
-  <div class="headers">
-
-    <div class="item">
-      Image
-    </div>
-    <div class="item">
-      Name
-    </div>
-    <div class="item">
-      Contacts
-    </div>
-  </div>
-
-
-  <div class="line-items" *ngFor="let item of users" (click)="view(item)">
-
-    <div class="item np">
-      <div class="icon" *ngIf="item.Dp">
-        <div class="user-dp-image">
-          <img [src]="item.Dp" alt="">
-        </div>
-      </div>
-
-      <div class="icon" *ngIf="!item.Dp">
-        <div class="user-dp-image">
-          <img src="assets/images/icons/add.svg" alt="">
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <h1>
-        {{item.Name}} {{item.Surname}}
-      </h1>
-    </div>
-    <div class="item">
-      <h1>
-        {{item.Email}}
-        <span class="code">
-          {{item.PhoneNumber}}
-        </span>
-      </h1>
-    </div>
-
-
-  </div>
-
+<div class="hiddenContent">
+  <h1>Resolution unsupported</h1>
+  <p>
+    Please use a bigger device to get the best experience.
+  </p>
 </div>
+
+<div class="main-list" *ngIf="users">
+  <div class="account">
+    <div class="headers">
+
+      <div class="item">
+        <div class="create-cta">
+          <div class="">
+            <h1>
+              Contacts
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="" >
+          <button mat-flat-button class="mat-danger" type="button" (click)="add()">
+            <b>Add Contact</b>
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <mat-card *ngIf="users.length > 0">
+      <mat-card-content>
+        <table class="tblDefaultList">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Cellphone Number</th>
+          </tr>
+          <tr *ngFor="let user of users"  (click)="view(user)">
+            <td>{{user.Name}}</td>
+            <td>{{user.Email}}</td>
+            <td>{{user.PhoneNumber}}</td>
+            <hr>
+          </tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+<!--<div class="main-list" *ngIf="users">-->
+<!--  <div class="create-cta">-->
+<!--    <div class="">-->
+<!--      <h1>-->
+<!--        Agents ({{users.length}})-->
+<!--      </h1>-->
+<!--    </div>-->
+<!--    <div class="action">-->
+<!--      <input type="search" placeholder="Filter by Agent Name ">-->
+<!--    </div>-->
+<!--    <div class="action">-->
+<!--      <button mat-button class="mat-primary sec" type="button" (click)="add()">-->
+<!--        Add New Agent-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="headers">-->
+
+<!--    <div class="item">-->
+<!--      Image-->
+<!--    </div>-->
+<!--    <div class="item">-->
+<!--      Name-->
+<!--    </div>-->
+<!--    <div class="item">-->
+<!--      Contacts-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+<!--  <div class="line-items" *ngFor="let item of users" (click)="view(item)">-->
+
+<!--    <div class="item np">-->
+<!--      <div class="icon" *ngIf="item.Dp">-->
+<!--        <div class="user-dp-image">-->
+<!--          <img [src]="item.Dp" alt="">-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="icon" *ngIf="!item.Dp">-->
+<!--        <div class="user-dp-image">-->
+<!--          <img src="assets/images/icons/add.svg" alt="">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="item">-->
+<!--      <h1>-->
+<!--        {{item.Name}} {{item.Surname}}-->
+<!--      </h1>-->
+<!--    </div>-->
+<!--    <div class="item">-->
+<!--      <h1>-->
+<!--        {{item.Email}}-->
+<!--        <span class="code">-->
+<!--          {{item.PhoneNumber}}-->
+<!--        </span>-->
+<!--      </h1>-->
+<!--    </div>-->
+
+
+<!--  </div>-->
+
+<!--</div>-->
