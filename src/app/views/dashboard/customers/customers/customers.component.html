@@ -32,6 +32,10 @@
     </div>
     <hr>
     <br>
+    <div class="detail">
+      <input type="text" placeholder="Search...">
+    </div>
+    <br>
     <mat-card *ngIf="users.length > 0">
       <mat-card-content>
         <table class="tblDefaultList">
@@ -44,7 +48,6 @@
             <td>{{user.Name}}</td>
             <td>{{user.Email}}</td>
             <td>{{user.PhoneNumber}}</td>
-            <hr>
           </tr>
         </table>
       </mat-card-content>

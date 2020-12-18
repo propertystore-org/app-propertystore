@@ -3,6 +3,15 @@
   background-color: $white;
   height: 75rem;
 
+  .detail {
+    width: 30%;
+
+    input {
+      border: 4.5px solid $cloud;
+    }
+
+  }
+
   .more {
     margin-top: 4.5em;
   }

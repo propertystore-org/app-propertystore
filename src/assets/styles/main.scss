@@ -69,6 +69,64 @@
 
 
 
+.main-list-card {
+  max-height: 90vh;
+  background: $white;
+  padding: 2em 4em;
+  overflow-y: scroll;
+
+  .heading {
+    display: grid;
+    grid-template-columns: 80% auto;
+    padding: 3rem 0;
+    width: $dashboard-body-width;
+
+    h1 {
+      font-weight: 400;
+
+      span {
+        font-weight: 800;
+      }
+    }
+
+    button {
+      width: 10rem;
+
+    }
+
+    div:nth-child(2) {
+      text-align: right;
+      padding-right: .5rem;
+    }
+  }
+
+  .items {
+    width: $dashboard-body-width;
+
+    .item {
+      border-radius: 0.4rem;
+      padding: .5em 1em;
+      margin: 0rem;
+      font-weight: 900;
+
+      @media only screen and (max-width: 600px) {
+        padding: 0;
+      }
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
+
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    padding: 0 1em 0 2em;
+  }
+
+}
+
 
 .error {
   padding: .5rem;
@@ -562,8 +620,8 @@ span.date {
 
 .material-icons {
   position: relative;
-  margin: .2rem;
-  top: .5rem;
+  margin: 0.2rem 0.2rem 0 0;
+  top: .4rem;
 }
 
 .link {
@@ -685,7 +743,7 @@ span.date {
   }
 
   td, th {
-    border: 1px solid $grey;
+    //border: 1px solid $grey;
     padding: 1em;
   }
 
@@ -700,8 +758,9 @@ span.date {
 
   th {
     text-align: left;
-    background-color: $danger;
-    color: white;
+    background-color: $grey;
+    border-bottom: 4px solid $darker-grey;
+    font-weight: 600;
   }
 }
 
@@ -721,7 +780,7 @@ span.date {
   .hiddenContent {
     text-align: center;
     visibility: visible;
-    margin-top: 2rem;
+    top: -30px;
 
     h1 {
       color: $silver;

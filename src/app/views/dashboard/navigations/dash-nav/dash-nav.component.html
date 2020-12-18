@@ -8,7 +8,7 @@
 
     <ul>
       <li>
-        <div class="logo" routerLink="/dashboard" >
+        <div class="logo" routerLink="/dashboard">
           <img src="assets/images/common/clipped-logo.png" alt="">
         </div>
       </li>
@@ -22,31 +22,92 @@
         </a>
       </li> -->
       <li>
-        <a routerLink="/dashboard/properties" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <a>
+          <span class="material-icons">
+            dashboard
+          </span>
+          <b>
+            Home
+          </b>
+<!--          <span class="material-icons">-->
+<!--            keyboard_arrow_down-->
+<!--          </span>-->
+        </a>
+        <ul>
+          <li>
+            <a routerLink="/dashboard/" routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{exact: true}">
+              Home
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a>
           <span class="material-icons">
             list
           </span>
-          <b>Properties</b>
+          <b>
+            Properties
+          </b>
+<!--          <span class="material-icons">-->
+<!--            keyboard_arrow_down-->
+<!--          </span>-->
         </a>
+        <ul>
+          <li>
+            <a routerLink="/dashboard/properties" routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{exact: true}">
+              Manage Properties
+            </a>
+          </li>
+        </ul>
       </li>
 
       <li>
-        <a routerLink="/dashboard/agents" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <a>
           <span class="material-icons">
-            supervisor_account
-          </span>
-          <b>Agents</b>
+             supervisor_account
+           </span>
+          <b>
+            Agents
+          </b>
+<!--          <span class="material-icons">-->
+<!--            keyboard_arrow_down-->
+<!--          </span>-->
         </a>
-      </li>
-      <li>
-        <a routerLink="/dashboard/contacts" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
-          <span class="material-icons">
-            supervisor_account
-          </span>
-          <b>Contacts</b>
-        </a>
+        <ul>
+          <li>
+            <a routerLink="/dashboard/agents" routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{exact: true}">
+              Manage Agents
+            </a>
+          </li>
+        </ul>
       </li>
 
+      <li>
+        <a>
+          <span class="material-icons">
+             supervisor_account
+           </span>
+          <b>
+            Contacts
+          </b>
+<!--          <span class="material-icons align-right" >-->
+<!--            keyboard_arrow_down-->
+<!--          </span>-->
+        </a>
+        <ul>
+          <li>
+            <a routerLink="/dashboard/contacts" routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{exact: true}">
+              Manage Contacts
+            </a>
+          </li>
+        </ul>
+      </li>
 
       <li class="logout">
         <a (click)="logout()">
@@ -77,7 +138,7 @@
 
       <li>
         <a routerLink="/dashboard/super-categories" routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{exact: true}">
+           [routerLinkActiveOptions]="{exact: true}">
           <span class="material-icons">
             list
           </span>
@@ -86,7 +147,7 @@
       </li>
       <li>
         <a routerLink="/dashboard/super-variations" routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{exact: true}">
+           [routerLinkActiveOptions]="{exact: true}">
           <span class="material-icons">
             list
           </span>
@@ -95,10 +156,9 @@
       </li>
 
 
-
       <li>
         <a routerLink="/dashboard/super-companies" routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{exact: true}">
+           [routerLinkActiveOptions]="{exact: true}">
           <span class="material-icons">
             supervisor_account
           </span>
@@ -131,6 +191,7 @@
         </a>
       </li>
 
+
       <li class="logout">
         <a (click)="logout()">
           <span class="material-icons">
@@ -143,5 +204,5 @@
 
     </ul>
   </div>
- 
+
 </div>
