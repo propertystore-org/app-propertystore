@@ -1,0 +1,48 @@
+<div class="headers">
+  <div class="item">
+    <div class="create-cta">
+      <div class="">
+        <h1>
+          Properties
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="">
+      <button mat-flat-button class="mat-danger" type="button" (click)="add()">
+        <b>Add Property</b>
+      </button>
+    </div>
+  </div>
+</div>
+<hr>
+<div *ngIf="router.url === '/dashboard/properties'">
+  <br>
+  <div class="detail">
+    <input type="text" placeholder="Search...">
+  </div>
+</div>
+<br>
+<div *ngIf="products$ | async as products">
+  <mat-card *ngIf="products.length > 0">
+    <mat-card-content>
+      <table class="tblDefaultList">
+        <tr>
+          <th>Property ID</th>
+          <th>Description</th>
+          <th>Address</th>
+          <th>Price</th>
+          <th>Type</th>
+        </tr>
+        <tr *ngFor="let item of products" (click)="view(item)">
+          <td>{{item.Code}}</td>
+          <td>{{item.Name}}</td>
+          <td>{{item.Name}}</td>
+          <td> {{item.RegularPrice  | currency:'R'}}</td>
+          <td>House</td>
+        </tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

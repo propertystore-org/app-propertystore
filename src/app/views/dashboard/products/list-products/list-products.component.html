@@ -3,85 +3,11 @@
   <span>Home</span>
 </mat-toolbar>
 
-<div class="main-list" *ngIf="products$ | async as products">
+<div class="main-list">
   <div class="account">
-    <div class="headers">
-
-      <div class="item">
-        <div class="create-cta">
-          <div class="">
-            <h1>
-              Properties
-            </h1>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="" >
-          <button mat-flat-button class="mat-danger" type="button" (click)="add()">
-            <b>Add Property</b>
-          </button>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <mat-card *ngIf="products.length > 0">
-      <mat-card-content>
-        <table class="tblDefaultList">
-          <tr>
-            <th>Property ID</th>
-            <th>Description</th>
-            <th>Address</th>
-            <th>Price</th>
-            <th>Type</th>
-          </tr>
-          <tr *ngFor="let item of products" (click)="view(item)">
-            <td>{{item.Code}}</td>
-            <td>{{item.Name}}</td>
-            <td>{{item.Name}}</td>
-            <td> {{item.RegularPrice  | currency:'R'}}</td>
-            <td>House</td>
-          </tr>
-        </table>
-      </mat-card-content>
-    </mat-card>
+  <app-property></app-property>
     <div class="divider"></div>
-    <div class="headers">
-      <div class="item">
-        <div class="create-cta">
-          <div class="">
-            <h1>
-              Contacts
-            </h1>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="" >
-          <button mat-flat-button class="mat-danger" type="button" (click)="addContacts()">
-            <b>Add Contact</b>
-          </button>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <mat-card *ngIf="contacts.length > 0">
-      <mat-card-content>
-        <table class="tblDefaultList">
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Cellphone Number</th>
-          </tr>
-          <tr *ngFor="let user of contacts"  (click)="viewContacts(user)">
-            <td>{{user.Name}}</td>
-            <td>{{user.Email}}</td>
-            <td>{{user.PhoneNumber}}</td>
-          </tr>
-        </table>
-      </mat-card-content>
-    </mat-card>
-
+    <app-contacts></app-contacts>
   </div>
 </div>
 

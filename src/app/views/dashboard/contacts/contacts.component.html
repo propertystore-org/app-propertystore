@@ -1,0 +1,42 @@
+<div class="headers">
+  <div class="item">
+    <div class="create-cta">
+      <div class="">
+        <h1>
+          Contacts
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="">
+      <button mat-flat-button class="mat-danger" type="button" (click)="add()">
+        <b>Add Contact</b>
+      </button>
+    </div>
+  </div>
+</div>
+<hr>
+<div *ngIf="router.url === '/dashboard/contacts' || router.url == '/dashboard/agents'">
+  <br>
+  <div class="detail">
+    <input type="text" placeholder="Search...">
+  </div>
+</div>
+<br>
+<mat-card *ngIf="users.length > 0">
+  <mat-card-content>
+    <table class="tblDefaultList">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Cellphone Number</th>
+      </tr>
+      <tr *ngFor="let user of users" (click)="view(user)">
+        <td>{{user.Name}}</td>
+        <td>{{user.Email}}</td>
+        <td>{{user.PhoneNumber}}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>
