@@ -1,0 +1,32 @@
+.hiddenContent {
+  display: none;
+}
+
+@media only screen and (min-device-width: 200px) and (max-device-width: 745px) {
+  .main-list {
+    visibility: hidden;
+  }
+
+  mat-toolbar {
+    visibility: hidden;
+  }
+
+  .hiddenContent {
+    text-align: center;
+    display: unset;
+    top: 6em;
+
+    h1 {
+      color: $silver;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .split {
+    visibility: hidden;
+  }
+
+  .nav {
+    visibility: hidden;
+  }
+}

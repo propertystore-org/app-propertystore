@@ -49,7 +49,7 @@
         text-decoration: none;
         font-size: 1em;
         display: block;
-        padding: 1em 0 1.3em 1.8em;
+        //padding: 1em 0 1.3em 1.8em;
       }
     }
   }
@@ -83,7 +83,7 @@ hr {
   }
 
   .nav {
-    width: 18%;
+    width: 20%;
   }
 
 }
@@ -124,4 +124,8 @@ ul ul li{
 input[type="checkbox"]{
   position: absolute;
   left: -9999px;
+}
+
+.material-icons {
+  font-size: 19px;
 }

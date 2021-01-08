@@ -12,23 +12,25 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {DashboardModule} from "../dashboard/dashboard.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatIconModule,
-    MatTabsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatToolbarModule,
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSnackBarModule,
+        MatIconModule,
+        MatTabsModule,
+        MatCardModule,
+        MatButtonModule,
+        MatToolbarModule,
+        DashboardModule,
 
-    // QuillModule.forRoot()
+        // QuillModule.forRoot()
 
-  ],
+    ],
   declarations: [...declarations]
 })
 export class HomeModule { }

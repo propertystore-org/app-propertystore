@@ -1,7 +1,7 @@
-
 <mat-toolbar>
   <span>Home</span>
 </mat-toolbar>
+<app-hidden-content></app-hidden-content>
 
 <div class="main-list">
   <div class="account">
@@ -10,56 +10,6 @@
     <app-contacts></app-contacts>
   </div>
 </div>
-
-
-<!--  <div class="line-items" *ngFor="let item of products" (click)="view(item)">-->
-
-<!--    <div class="item img">-->
-<!--      <div class="icon" *ngIf="item.FeaturedImageUrl">-->
-<!--        <div class="user-dp-image">-->
-<!--          <img [src]="item.FeaturedImageUrl" alt="">-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="icon" *ngIf="!item.FeaturedImageUrl">-->
-<!--        <div class="user-dp-image">-->
-<!--          <img src="assets/images/icons/add.svg" alt="">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="item">-->
-<!--      <h1>-->
-<!--        &lt;!&ndash; <span> Total</span> &ndash;&gt;-->
-<!--        {{item.Name}}-->
-<!--        <span class="code">-->
-<!--          {{item.Code}}-->
-<!--        </span>-->
-<!--      </h1>-->
-<!--    </div>-->
-<!--    <div class="item">-->
-<!--      <h1>-->
-<!--        &lt;!&ndash; <span> Total</span> &ndash;&gt;-->
-<!--        {{item.ParentCategoryName}}-->
-<!--        <span class="code">-->
-<!--          {{item.CategoryName}}-->
-<!--        </span>-->
-<!--      </h1>-->
-<!--    </div>-->
-<!--    <div class="item" *ngIf="item.PriceFrom > 0">-->
-<!--      <h1>-->
-<!--        &lt;!&ndash; <span> Amount Due</span> &ndash;&gt;-->
-<!--        {{item.PriceFrom  | currency:'R'}} - {{item.PriceTo  | currency:'R'}}-->
-<!--      </h1>-->
-<!--    </div>-->
-<!--    <div class="item" c>-->
-<!--      <h1>-->
-<!--        &lt;!&ndash; <span> Amount Due</span> &ndash;&gt;-->
-<!--        {{item.RegularPrice  | currency:'R'}}-->
-<!--      </h1>-->
-<!--    </div>-->
-
-<!--  </div>-->
-
 
 <div class="overlay" *ngIf="showModal"></div>
 
@@ -71,12 +21,5 @@
   </div>
 
   <!-- <app-add-learner (doneAdding)="doneAdding($event)"></app-add-learner> -->
-</div>
-
-<div class="hiddenContent">
-  <h1>Resolution unsupported</h1>
-  <p>
-    Please use a bigger device to get the best experience.
-  </p>
 </div>
 <!-- <app-dash-loader *ngIf="showLoader"></app-dash-loader> -->

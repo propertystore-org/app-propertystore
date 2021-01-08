@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
-import {Product, User} from "../../../../models";
-import {AccountService, ProductService, UserService} from "../../../../services";
-import {Router} from "@angular/router";
-import {CUSTOMER} from "../../../../shared/constants";
+import {Observable} from 'rxjs';
+import {Product, User} from '../../../../models';
+import {AccountService, ProductService, UserService} from '../../../../services';
+import {Router} from '@angular/router';
+import {CUSTOMER} from '../../../../shared/constants';
 
 @Component({
   selector: 'app-property',

@@ -38,13 +38,16 @@ import { SuperVariationsComponent } from './super/super-variations/super-variati
 import { SuperVariationOptionsComponent } from './super/super-variations-options/super-variation-options.component';
 import {PropertyComponent} from './property/property.component';
 import {PropertiesComponent} from './properties/properties.component';
+import {HiddenContentComponent} from './hidden-content/hidden-content.component';
+import {StatisticsComponent} from './statistics/statistics.component';
 
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
     children: [
       // { path: '', component: OverviewComponent },
-      { path: '', component: ListProductsComponent },
+      { path: '', component: StatisticsComponent },
+      { path: 'home', component: ListProductsComponent },
       { path: 'customer/:id', component: CustomerComponent },
       { path: 'product/:id', component: ProductComponent },
       { path: 'order/:id', component: OrderComponent },
@@ -73,6 +76,8 @@ const routes: Routes = [
 ];
 export const declarations: Array<any> = [
   DashboardComponent,
+  StatisticsComponent,
+  HiddenContentComponent,
   PropertiesComponent,
   PropertyComponent,
   ContactsComponent,

@@ -68,7 +68,6 @@
 }
 
 
-
 .main-list-card {
   max-height: 90vh;
   background: $white;
@@ -275,9 +274,6 @@
 }
 
 
-
-
-
 .delete-modal {
   padding: 1rem;
 }
@@ -285,7 +281,6 @@
 .pointer {
   cursor: pointer;
 }
-
 
 
 .user-dp {
@@ -358,7 +353,6 @@
     cursor: pointer;
   }
 }
-
 
 
 .comment {
@@ -547,8 +541,6 @@ span.date {
 }
 
 
-
-
 .back {
   position: fixed;
   right: 1rem;
@@ -607,7 +599,7 @@ span.date {
   margin: 0 auto;
   padding: 0;
 
-  h3{
+  h3 {
     font-weight: 400;
     font-size: 1.6em;
     margin: .5em 2em;
@@ -692,7 +684,6 @@ span.date {
 }
 
 
-
 /* Styles for tab labels */
 .mat-tab {
   border: none !important;
@@ -727,7 +718,7 @@ span.date {
   background: $white !important;
 }
 
-.box-shadow{
+.box-shadow {
   box-shadow: $box-shadow;
 }
 
@@ -764,39 +755,6 @@ span.date {
   }
 }
 
-.hiddenContent {
-  visibility: hidden;
-}
-
-@media only screen and (min-device-width: 200px) and (max-device-width: 745px) {
-  .main-list {
-    visibility: hidden;
-  }
-
-  mat-toolbar {
-    visibility: hidden;
-  }
-
-  .hiddenContent {
-    text-align: center;
-    visibility: visible;
-    top: -30px;
-
-    h1 {
-      color: $silver;
-      margin-top: 0.5rem;
-    }
-  }
-
-  .split{
-    visibility: hidden;
-  }
-
-  .nav{
-    visibility: hidden;
-  }
-}
-
 mat-toolbar {
   background-color: $primary !important;
   height: 5rem !important;
@@ -804,6 +762,7 @@ mat-toolbar {
   span {
     margin-left: 100px;
     color: $white;
+    font-weight: lighter;
     font-size: 1.8rem;
   }
 }
@@ -812,9 +771,26 @@ hr {
   border: 1.2px solid $cloud;
 }
 
-
 .mat-danger {
   background-color: $danger;
+  font-weight: lighter;
   height: 4em;
   color: white;
+}
+
+.danger-text {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1em;
+  color: $accent;
+  p {
+    text-align: right;
+    text-decoration: underline;
+  }
+}
+
+p:active, p:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
 }

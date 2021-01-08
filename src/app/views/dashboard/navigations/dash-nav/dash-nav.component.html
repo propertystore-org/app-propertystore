@@ -13,30 +13,22 @@
         </div>
       </li>
       <hr>
-      <!-- <li>
-        <a routerLink="/dashboard" routerLinkActive="active-link"  [routerLinkActiveOptions]="{exact: true}">
+      <li>
+        <a routerLink="/dashboard/" routerLinkActive="active-link"  [routerLinkActiveOptions]="{exact: true}">
           <span class="material-icons">
             dashboard
           </span>
            Dashboard
         </a>
-      </li> -->
+      </li>
       <li>
-        <a>
-          <span class="material-icons">
-            dashboard
-          </span>
-          <b>
-            Home
-          </b>
-<!--          <span class="material-icons">-->
-<!--            keyboard_arrow_down-->
-<!--          </span>-->
-        </a>
         <ul>
           <li>
-            <a routerLink="/dashboard/" routerLinkActive="active-link"
+            <a routerLink="/dashboard/home" routerLinkActive="active-link"
                [routerLinkActiveOptions]="{exact: true}">
+            <span class="material-icons">
+              home
+            </span>
               Home
             </a>
           </li>
@@ -44,21 +36,13 @@
       </li>
 
       <li>
-        <a>
-          <span class="material-icons">
-            list
-          </span>
-          <b>
-            Properties
-          </b>
-<!--          <span class="material-icons">-->
-<!--            keyboard_arrow_down-->
-<!--          </span>-->
-        </a>
         <ul>
           <li>
             <a routerLink="/dashboard/properties" routerLinkActive="active-link"
                [routerLinkActiveOptions]="{exact: true}">
+            <span class="material-icons">
+              house
+            </span>
               Manage Properties
             </a>
           </li>
@@ -66,21 +50,13 @@
       </li>
 
       <li>
-        <a>
-          <span class="material-icons">
-             supervisor_account
-           </span>
-          <b>
-            Agents
-          </b>
-<!--          <span class="material-icons">-->
-<!--            keyboard_arrow_down-->
-<!--          </span>-->
-        </a>
         <ul>
           <li>
             <a routerLink="/dashboard/agents" routerLinkActive="active-link"
                [routerLinkActiveOptions]="{exact: true}">
+             <span class="material-icons">
+               supervisor_account
+             </span>
               Manage Agents
             </a>
           </li>
@@ -88,21 +64,13 @@
       </li>
 
       <li>
-        <a>
-          <span class="material-icons">
-             supervisor_account
-           </span>
-          <b>
-            Contacts
-          </b>
-<!--          <span class="material-icons align-right" >-->
-<!--            keyboard_arrow_down-->
-<!--          </span>-->
-        </a>
         <ul>
           <li>
             <a routerLink="/dashboard/contacts" routerLinkActive="active-link"
                [routerLinkActiveOptions]="{exact: true}">
+              <span class="material-icons">
+               contacts
+             </span>
               Manage Contacts
             </a>
           </li>
@@ -114,10 +82,9 @@
           <span class="material-icons">
             power_settings_new
           </span>
-          <b>Logout</b>
+          Logout
         </a>
       </li>
-
 
     </ul>
   </div>

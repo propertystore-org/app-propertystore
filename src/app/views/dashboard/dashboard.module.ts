@@ -18,6 +18,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {HiddenContentComponent} from './hidden-content/hidden-content.component';
 
 @NgModule({
   imports: [
@@ -41,8 +43,12 @@ import {MatButtonModule} from '@angular/material/button';
     MatCardModule,
     MatTableModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule
 
+  ],
+  exports: [
+    HiddenContentComponent
   ],
   declarations: [...declarations]
 })
