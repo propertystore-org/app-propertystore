@@ -9,20 +9,28 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {DashboardModule} from "../dashboard/dashboard.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatIconModule,
-    MatTabsModule
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSnackBarModule,
+        MatIconModule,
+        MatTabsModule,
+        MatCardModule,
+        MatButtonModule,
+        MatToolbarModule,
+        DashboardModule,
 
-    // QuillModule.forRoot()
+        // QuillModule.forRoot()
 
-  ],
+    ],
   declarations: [...declarations]
 })
 export class HomeModule { }

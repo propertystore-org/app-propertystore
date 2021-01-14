@@ -5,46 +5,78 @@
   </div> -->
 
   <div class="nav" *ngIf="isAdmin">
-    <div class="logo">
-      <img src="assets/images/common/logo.png" alt="">
-    </div>
+
     <ul>
-      <!-- <li>
-        <a routerLink="/dashboard" routerLinkActive="active-link"  [routerLinkActiveOptions]="{exact: true}">
+      <li>
+        <div class="logo" routerLink="/dashboard">
+          <img src="assets/images/common/clipped-logo.png" alt="">
+        </div>
+      </li>
+      <hr>
+      <li>
+        <a routerLink="/dashboard/" routerLinkActive="active-link"  [routerLinkActiveOptions]="{exact: true}">
           <span class="material-icons">
             dashboard
           </span>
            Dashboard
         </a>
-      </li> -->
-
+      </li>
       <li>
-        <a routerLink="/dashboard/properties" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
-          <span class="material-icons">
-            list
-          </span>
-          Properties
-        </a>
+        <ul>
+          <li>
+            <a routerLink="/dashboard/home" routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{exact: true}">
+            <span class="material-icons">
+              home
+            </span>
+              Home
+            </a>
+          </li>
+        </ul>
       </li>
 
       <li>
-        <a routerLink="/dashboard/agents" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
-          <span class="material-icons">
-            supervisor_account
-          </span>
-          Agents
-        </a>
-      </li>
-      <li>
-        <a routerLink="/dashboard/contacts" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
-          <span class="material-icons">
-            supervisor_account
-          </span>
-          Contacts
-        </a>
+        <ul>
+          <li>
+            <a routerLink="/dashboard/properties" routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{exact: true}">
+            <span class="material-icons">
+              house
+            </span>
+              Manage Properties
+            </a>
+          </li>
+        </ul>
       </li>
 
-    
+      <li>
+        <ul>
+          <li>
+            <a routerLink="/dashboard/agents" routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{exact: true}">
+             <span class="material-icons">
+               supervisor_account
+             </span>
+              Manage Agents
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <ul>
+          <li>
+            <a routerLink="/dashboard/contacts" routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{exact: true}">
+              <span class="material-icons">
+               contacts
+             </span>
+              Manage Contacts
+            </a>
+          </li>
+        </ul>
+      </li>
+
       <li class="logout">
         <a (click)="logout()">
           <span class="material-icons">
@@ -53,7 +85,6 @@
           Logout
         </a>
       </li>
-
 
     </ul>
   </div>
@@ -74,7 +105,7 @@
 
       <li>
         <a routerLink="/dashboard/super-categories" routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{exact: true}">
+           [routerLinkActiveOptions]="{exact: true}">
           <span class="material-icons">
             list
           </span>
@@ -83,7 +114,7 @@
       </li>
       <li>
         <a routerLink="/dashboard/super-variations" routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{exact: true}">
+           [routerLinkActiveOptions]="{exact: true}">
           <span class="material-icons">
             list
           </span>
@@ -92,10 +123,9 @@
       </li>
 
 
-
       <li>
         <a routerLink="/dashboard/super-companies" routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{exact: true}">
+           [routerLinkActiveOptions]="{exact: true}">
           <span class="material-icons">
             supervisor_account
           </span>
@@ -128,6 +158,7 @@
         </a>
       </li>
 
+
       <li class="logout">
         <a (click)="logout()">
           <span class="material-icons">
@@ -140,5 +171,5 @@
 
     </ul>
   </div>
- 
+
 </div>

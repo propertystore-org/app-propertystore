@@ -1,22 +1,17 @@
-<div class="main add-screen" *ngIf="user">
+<mat-toolbar>
+  <span>Manage Properties</span>
+</mat-toolbar>
 
-  <div class="page-section">
-    <div class="hearder-cols">
-      <h3>
-        <span class="material-icons pointer" (click)="back()">
-          west
-        </span>
-        {{heading}}
-      </h3>
-    </div>
+<div class="main" *ngIf="user">
+  <div class="products">
     <div class="main-list">
-      <div class="more">
-        <mat-tab-group class="box-shadow" [selectedIndex]="selectedIndex">
-          <mat-tab label="1️⃣ Customer Details">
-            <app-add-customer [customer]="customer"></app-add-customer>
-          </mat-tab>
-        </mat-tab-group>
+      <div class="account">
+          <mat-tab-group class="box-shadow" [selectedIndex]="selectedIndex">
+            <mat-tab label="Customer Details">
+              <app-add-customer [customer]="customer"></app-add-customer>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
       </div>
     </div>
   </div>
-</div>

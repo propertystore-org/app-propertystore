@@ -39,7 +39,7 @@ export class DashNavComponent implements OnInit {
 
   logout() {
     this.accountService.updateUserState(null);
-    this.router.navigate(['']);
+    this.router.navigate(['sign-in']);
   }
 
 }

@@ -1,0 +1,71 @@
+.create-cta {
+  h1 {
+    font-size: 1.8em;
+    padding: .5em 0;
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+.default {
+  .line-items,
+  .headers {
+    grid-template-columns: 80% auto;
+  }
+}
+
+.search {
+  .line-items,
+  .headers {
+    grid-template-columns: 20% 30% 5%;
+  }
+
+  .search-padding {
+    width: 100%;
+    padding: 0;
+
+    select, input {
+      border: 4px solid $cloud;
+      width: 100%;
+    }
+  }
+
+  input {
+    margin: 0;
+
+  }
+}
+
+.button {
+  height: 3em;
+  padding: 0;
+  background-color: $cloud;
+}
+
+.material-icons {
+  position: relative;
+  font-weight: lighter;
+  margin: 0;
+  top: 0.2rem;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: $black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid $cloud;
+  font-weight: lighter;
+}
+
+.pagination .button-pagination {
+  background-color: $grey;
+  border: 1.5px solid $grey;
+  font-weight: lighter;
+  color: $black;
+}
+

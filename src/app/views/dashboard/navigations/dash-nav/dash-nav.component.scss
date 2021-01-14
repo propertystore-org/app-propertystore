@@ -4,11 +4,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 10%;
-  background: $primary;
+  width: 14%;
+  background-color: #16202f !important;
+  //border: 1.2px solid $cloud;
   height: 100%;
   box-sizing: border-box;
   z-index: 1000;
+
+
 
   @media only screen and (max-width: 600px) {
     position: fixed;
@@ -22,14 +25,16 @@
 
   .logo {
     text-align: center;
-    padding: 4em 0;
+    padding: 2.3rem 0 1.2rem 0;
+    cursor: pointer;
 
     @media only screen and (max-width: 600px) {
       text-align: left;
     }
 
     img {
-      width: 5em;
+      width: 6em;
+      margin-top: -9rem;
       @media only screen and (max-width: 600px) {
         width: 8em;
       }
@@ -39,16 +44,16 @@
   ul {
     li {
       padding: 0;
-
-      a {
-        color: $white;
+      a, label {
+        color: #92A3B1;
         text-decoration: none;
-        font-size: .8em;
+        font-size: 1em;
         display: block;
-        padding: 1em 2em;
+        //padding: 1em 0 1.3em 1.8em;
       }
     }
   }
+
 }
 
 
@@ -60,9 +65,67 @@
 
 
 .logout{
-  a{
+  a, label{
     cursor: pointer;
     display: block;
     // margin-top: 7em;
   }
+}
+
+hr {
+  border: 1.2px solid $black;
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  ul li a {
+    padding: 1.3em 1em;
+  }
+
+  .nav {
+    width: 20%;
+  }
+
+}
+
+
+.wrapper{
+  margin: 10% auto;
+  width: 400px;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  display: block;
+  cursor: pointer;
+  padding: 1rem;
+  //border: 1px solid #fff;
+  border-bottom: none;
+}
+
+//label:hover{
+//  background: #34495e;
+//}
+
+//label.last{
+//  border-bottom: 1px solid #fff;
+//}
+
+ul ul li{
+  padding: 3rem;
+}
+
+
+input[type="checkbox"]{
+  position: absolute;
+  left: -9999px;
+}
+
+.material-icons {
+  font-size: 19px;
 }

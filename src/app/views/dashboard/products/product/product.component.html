@@ -1,27 +1,32 @@
-<div class="main add-screen" *ngIf="product">
+<mat-toolbar>
+  <span>Manage Properties</span>
+</mat-toolbar>
 
-  <div class="page-section">
-  <div class="hearder-cols">
-    <!-- <img *ngIf="product.FeaturedImageUrl" [src]="product.FeaturedImageUrl" class="f-icon" alt="">
-    <div class="" *ngIf="!product.FeaturedImageUrl"></div> -->
-    <h3>
-      <span class="material-icons pointer" (click)="back()">
-        west
-      </span>
-      {{heading}}
-    </h3>
-  </div>
-    <div class="main-list">
-      <div class="more">
+<div class="main" *ngIf="product">
+<div class="products">
+  <div class="main-list">
+    <div class="account" >
+
+      <!--  <div class="page-section">-->
+      <!--  <div class="hearder-cols">-->
+      <!--    &lt;!&ndash; <img *ngIf="product.FeaturedImageUrl" [src]="product.FeaturedImageUrl" class="f-icon" alt="">-->
+      <!--    <div class="" *ngIf="!product.FeaturedImageUrl"></div> &ndash;&gt;-->
+      <!--    <h3>-->
+      <!--      <span class="material-icons pointer" (click)="back()">-->
+      <!--        west-->
+      <!--      </span>-->
+      <!--      {{heading}}-->
+      <!--    </h3>-->
+      <!--  </div>-->
         <mat-tab-group class="box-shadow" (selectedTabChange)="onTabChanged($event)" [selectedIndex]="selectedIndex">
-          <mat-tab label="1️⃣ Product Details">
+          <mat-tab label="Product Details">
             <app-add-product [existingProduct]="product" (addingProductFinished)="addingProductFinished($event)">
             </app-add-product>
           </mat-tab>
-          <mat-tab label="2️⃣ Features" *ngIf="ProductId != 'add'">
+          <mat-tab label="Features" *ngIf="ProductId != 'add'">
             <app-product-variations></app-product-variations>
           </mat-tab>
-          <mat-tab label="3️⃣ Product variations" *ngIf="ProductId != 'add' && product.ProductVariations">
+          <mat-tab label="Product variations" *ngIf="ProductId != 'add' && product.ProductVariations">
             <app-product-combinations></app-product-combinations>
           </mat-tab>
 

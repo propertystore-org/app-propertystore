@@ -1,24 +1,16 @@
-$table-cols : 35% 15% 15% auto;
+@import '../../../../assets/styles/color';
+
+$table-cols : 40% auto;
+
+mat-card canvas{
+  border: none;
+}
 
 .headers {
   display: grid;
   grid-template-columns: $table-cols;
-  //border-right: 1px solid $cloud;
-  background: $primary;
-  background: $white;
-  padding: 0;
-  margin-top: 1em;
-
-  .item {
-    font-weight: 700;
-    //color: $primary;
-    border-right: 2px solid $white;
-    padding: .5em 1em;
-  }
-
-  .main-col {
-    color: $tec;
-  }
+  padding: 0 3em 0 8em;
+  margin-top: 2em;
 }
 
 .search .headers .item{
@@ -136,3 +128,4 @@ $table-cols : 35% 15% 15% auto;
 .stuck {
   background: $danger ;
 }
+

@@ -2,7 +2,7 @@
 @import './inputs';
 
 .main {
-  background: $cloud;
+  background: $white;
   padding: 0;
   max-height: 100vh;
   // overflow-y: scroll;
@@ -59,9 +59,72 @@
   @media only screen and (max-width: 600px) {
     padding: 0;
   }
+
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    padding: 0 1em 0 6em;
+  }
+
 }
 
 
+.main-list-card {
+  max-height: 90vh;
+  background: $white;
+  padding: 2em 4em;
+  overflow-y: scroll;
+
+  .heading {
+    display: grid;
+    grid-template-columns: 80% auto;
+    padding: 3rem 0;
+    width: $dashboard-body-width;
+
+    h1 {
+      font-weight: 400;
+
+      span {
+        font-weight: 800;
+      }
+    }
+
+    button {
+      width: 10rem;
+
+    }
+
+    div:nth-child(2) {
+      text-align: right;
+      padding-right: .5rem;
+    }
+  }
+
+  .items {
+    width: $dashboard-body-width;
+
+    .item {
+      border-radius: 0.4rem;
+      padding: .5em 1em;
+      margin: 0rem;
+      font-weight: 900;
+
+      @media only screen and (max-width: 600px) {
+        padding: 0;
+      }
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
+
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    padding: 0 1em 0 2em;
+  }
+
+}
 
 
 .error {
@@ -211,9 +274,6 @@
 }
 
 
-
-
-
 .delete-modal {
   padding: 1rem;
 }
@@ -221,7 +281,6 @@
 .pointer {
   cursor: pointer;
 }
-
 
 
 .user-dp {
@@ -294,7 +353,6 @@
     cursor: pointer;
   }
 }
-
 
 
 .comment {
@@ -483,8 +541,6 @@ span.date {
 }
 
 
-
-
 .back {
   position: fixed;
   right: 1rem;
@@ -538,12 +594,12 @@ span.date {
 }
 
 .page-section {
-  background: $cloud;
+  background: $white;
   width: 100%;
   margin: 0 auto;
   padding: 0;
 
-  h3{
+  h3 {
     font-weight: 400;
     font-size: 1.6em;
     margin: .5em 2em;
@@ -556,8 +612,8 @@ span.date {
 
 .material-icons {
   position: relative;
-  margin: .2rem;
-  top: .5rem;
+  margin: 0.2rem 0.2rem 0 0;
+  top: .4rem;
 }
 
 .link {
@@ -628,7 +684,6 @@ span.date {
 }
 
 
-
 /* Styles for tab labels */
 .mat-tab {
   border: none !important;
@@ -663,6 +718,79 @@ span.date {
   background: $white !important;
 }
 
-.box-shadow{
+.box-shadow {
   box-shadow: $box-shadow;
+}
+
+///
+
+
+.tblDefaultList {
+  border-collapse: collapse;
+  width: 100%;
+
+  hr {
+    visibility: hidden;
+  }
+
+  td, th {
+    //border: 1px solid $grey;
+    padding: 1em;
+  }
+
+  tr:nth-child(even) {
+    background-color: $cloud;
+  }
+
+  tr:hover {
+    background-color: $grey;
+    cursor: pointer;
+  }
+
+  th {
+    text-align: left;
+    background-color: $grey;
+    border-bottom: 4px solid $darker-grey;
+    font-weight: 600;
+  }
+}
+
+mat-toolbar {
+  background-color: $primary !important;
+  height: 5rem !important;
+
+  span {
+    margin-left: 100px;
+    color: $white;
+    font-weight: lighter;
+    font-size: 1.8rem;
+  }
+}
+
+hr {
+  border: 1.2px solid $cloud;
+}
+
+.mat-danger {
+  background-color: $danger;
+  font-weight: lighter;
+  height: 4em;
+  color: white;
+}
+
+.danger-text {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1em;
+  color: $accent;
+  p {
+    text-align: right;
+    text-decoration: underline;
+  }
+}
+
+p:active, p:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
 }

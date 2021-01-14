@@ -13,6 +13,14 @@ import { MatRadioModule } from '@angular/material/radio';
 import { QuillModule } from 'ngx-quill';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {HiddenContentComponent} from './hidden-content/hidden-content.component';
+import {ChartsModule} from "ng2-charts";
 
 @NgModule({
   imports: [
@@ -31,8 +39,18 @@ import { MatChipsModule } from '@angular/material/chips';
     // MaterialModule,
     MatSnackBarModule,
     MatChipsModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+    MatToolbarModule,
+    MatCardModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatGridListModule,
+    ChartsModule
 
+  ],
+  exports: [
+    HiddenContentComponent
   ],
   declarations: [...declarations]
 })

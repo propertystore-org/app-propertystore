@@ -1,0 +1,49 @@
+<mat-toolbar>
+  <span>DashBoard</span>
+</mat-toolbar>
+
+<div class="headers">
+  <div class="item">
+    <div class="main">
+      <div class="products">
+            <mat-card>
+              <mat-card-content>
+                <h2>Applications P/M</h2>
+                <div style="display: block; margin-top: 3em">
+                  <canvas baseChart width="300" height="300"
+                          [datasets]="lineChartData"
+                          [labels]="lineChartLabels"
+                          [options]="lineChartOptions"
+                          [colors]="lineChartColors"
+                          [legend]="lineChartLegend"
+                          [chartType]="lineChartType"
+                          [plugins]="lineChartPlugins">
+                  </canvas>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="main">
+      <div class="products">
+            <mat-card>
+              <mat-card-content>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+   </div>
+  <div class="item">
+    <div class="main">
+      <div class="products">
+        <br>
+        <mat-card>
+          <mat-card-content>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+    </div>

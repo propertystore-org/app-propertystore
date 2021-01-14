@@ -10,6 +10,7 @@ import { AddCustomerComponent } from './customers/add-customer/add-customer.comp
 import { CustomerComponent } from './customers/customer/customer.component';
 import { CustomersComponent } from './customers/customers/customers.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {ContactsComponent} from './contacts/contacts.component';
 import { AddJobCardComponent } from './jobs/add-job-card/add-job-card.component';
 import { AddJobWorkItemComponent } from './jobs/add-job-work-item/add-job-work-item.component';
 import { JobCardsComponent } from './jobs/job-cards/job-cards.component';
@@ -35,18 +36,23 @@ import { SetUpCompanyVariationsComponent } from './variation/set-up-company-vari
 import { SuperCompaniesComponent } from './super/super-companies/super-companies.component';
 import { SuperVariationsComponent } from './super/super-variations/super-variations.component';
 import { SuperVariationOptionsComponent } from './super/super-variations-options/super-variation-options.component';
+import {PropertyComponent} from './property/property.component';
+import {PropertiesComponent} from './properties/properties.component';
+import {HiddenContentComponent} from './hidden-content/hidden-content.component';
+import {StatisticsComponent} from './statistics/statistics.component';
 
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
     children: [
       // { path: '', component: OverviewComponent },
-      { path: '', component: ListProductsComponent },
+      { path: '', component: StatisticsComponent },
+      { path: 'home', component: ListProductsComponent },
       { path: 'customer/:id', component: CustomerComponent },
       { path: 'product/:id', component: ProductComponent },
       { path: 'order/:id', component: OrderComponent },
       { path: 'create-order', component: CreateOrderComponent },
-      { path: 'properties', component: ListProductsComponent },
+      { path: 'properties', component: PropertiesComponent },
       { path: 'agents', component: CustomersComponent },
       { path: 'contacts', component: CustomersComponent },
       { path: 'invoices', component: ListOrdersComponent },
@@ -70,6 +76,11 @@ const routes: Routes = [
 ];
 export const declarations: Array<any> = [
   DashboardComponent,
+  StatisticsComponent,
+  HiddenContentComponent,
+  PropertiesComponent,
+  PropertyComponent,
+  ContactsComponent,
   LoaderComponent,
   CustomerComponent,
   CustomersComponent,

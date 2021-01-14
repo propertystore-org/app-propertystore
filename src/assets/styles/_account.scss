@@ -1,11 +1,23 @@
 .account {
-  padding: 1rem;
+  padding: 2.2rem 10rem 0 10rem;
   background-color: $white;
-  height: 100%;
+  height: 75rem;
+
+  .detail {
+    width: 30%;
+
+    input {
+      border: 4.5px solid $cloud;
+    }
+
+  }
+
+  .more {
+    margin-top: 4.5em;
+  }
 
   form {
-    margin: 0 auto;
-
+    //margin: 0 auto;
     .form-group {
       margin: 0.5rem 0;
     }
@@ -25,7 +37,6 @@
         font-size: 1rem;
         color: $grey;
         font-weight: 500;
-        color: $black;
       }
 
       a {
@@ -47,12 +58,26 @@
         text-transform: capitalize;
       }
     }
+
   }
 
 
   .side-image {
     img {
       width: 100%;
+    }
+
+    mat-card {
+      background-color: #f9fbfd !important;
+      input {
+        height: 50px;
+      }
+      mat-card-content {
+        padding: 3em;
+      }
+      .mat-danger {
+        margin-top: 2em;
+      }
     }
 
     @media only screen and (max-width: 600px) {
@@ -64,12 +89,19 @@
 
   @media only screen and (max-width: 600px) {
     padding: 1rem;
-
     form {
-      width: 90%;
-      padding: 1rem;
+      width: 100%;
+      //padding: 1rem;
       position: absolute;
-      bottom: 1rem
+      //bottom: 1rem
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    padding: 0;
+
+    mat-card-content {
+      padding: 0;
     }
   }
 

@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Product } from 'src/models/product.model';
-import { User } from 'src/models/user.model';
-import { AccountService } from 'src/services/account.service';
-import { ProductService } from 'src/services/product.service';
-import { UserService } from 'src/services/user.service';
-import {CUSTOMER} from '../../../../../shared/constants';
+import {Observable} from 'rxjs';
+import {Product, User} from '../../../../models';
+import {AccountService, ProductService, UserService} from '../../../../services';
+import {Router} from '@angular/router';
+import {CUSTOMER} from '../../../../shared/constants';
 
 @Component({
-  selector: 'app-list-products',
-  templateUrl: './list-products.component.html',
-  styleUrls: ['./list-products.component.scss']
+  selector: 'app-property',
+  templateUrl: './property.component.html',
+  styleUrls: ['./property.component.scss']
 })
-export class ListProductsComponent implements OnInit {
+export class PropertyComponent implements OnInit {
   products$: Observable<Product[]>;
   user: User;
   modalHeading = 'Add product';
@@ -26,7 +23,7 @@ export class ListProductsComponent implements OnInit {
     private productService: ProductService,
     private accountService: AccountService,
     private userService: UserService,
-    private router: Router,
+    public router: Router,
   ) { }
 
   ngOnInit() {
