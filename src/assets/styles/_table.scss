@@ -5,14 +5,14 @@ $table-cols : 35% 15% 15% auto;
   grid-template-columns: $table-cols;
   //border-right: 1px solid $cloud;
   background: $primary;
-  background: $white;
+  background: #F8F8F8;
   padding: 0;
   margin-top: 1em;
 
   .item {
     font-weight: 700;
     //color: $primary;
-    border-right: 2px solid $white;
+    border-right: 2px solid #F8F8F8;
     padding: .5em 1em;
   }
 
@@ -28,11 +28,11 @@ $table-cols : 35% 15% 15% auto;
 .line-items {
   display: grid;
   grid-template-columns: $table-cols;
-  border-bottom: 3px solid $white;
+  border-bottom: 3px solid #F8F8F8;
 
   .item {
     cursor: default;
-    border-right: 2px solid $white;
+    border-right: 2px solid #F8F8F8;
     padding: .5em 1em;
     background: $cloud;
     position: relative;

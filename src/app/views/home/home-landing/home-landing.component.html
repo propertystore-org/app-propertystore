@@ -2,44 +2,110 @@
   <img src="assets/images/common/logo.png" alt="">
 </div>
 <div class="banner">
-  <img src="assets/images/common/bg.png" alt="">
+    <div style="text-align: center; color: white; top: 6em">
+      Property Store
+      <br>
+      <br>
+      <h3>Find The Property of your dreams</h3>
+    </div>
 
-  <div class="search">
-    <div class="">
-      <input type="search">
+    <div class="search">
+      <div class="">
+        <input type="search" placeholder="Search for a City, Suburb...">
+      </div>
+      <div class="">
+        <button>For Rent</button>
+      </div>
+      <div class="">
+        <button>For Buy</button>
+      </div>
     </div>
-    <div class="">
-      <button>For Rent</button>
-    </div>
-    <div class="">
-      <button>For Buy</button>
-    </div>
-  </div>
-
 </div>
 <div class="main-list" *ngIf="products$ | async as products">
-  .
   <div class="products">
-
     <h1>
       {{modalHeading}}
     </h1>
-    <div class="product" *ngFor="let item of products" (click)="view(item)">
-      <div class="icon" *ngIf="item.FeaturedImageUrl">
-        <div class="user-dp-image">
-          <img [src]="item.FeaturedImageUrl" alt="">
+    <div>
+      <br>
+      <div class="headers">
+        <div class="item">
+          Sort By:
+        </div>
+        <div class="item font-color">
+          Lowest Price
+        </div>
+        <div class="item font-color">
+          Highest Price
+        </div>
+        <div class="item font-color">
+          Newest
         </div>
       </div>
+    </div>
+    <div class="headers2">
+      <div class="item2">
+        <div class="product" *ngFor="let item of products" (click)="view(item)">
+          <div class="icon" *ngIf="item.FeaturedImageUrl">
+            <div class="user-dp-image">
+              <img [src]="item.FeaturedImageUrl" alt="">
+            </div>
+          </div>
 
+          <div class="details">
+            <h4 class="name"> {{item.Name}}</h4>
+            <h2 class="price"> {{item.RegularPrice  | currency:'R'}}</h2>
+            <h3 class="location"> Sandton</h3>
+            <h4 class="name"> {{item.Description}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="item2">
+        <div class="search-padding">
+          <h2>Advance Search</h2>
+          <select>
+            <option>Any Status</option>
+          </select>
+          <select>
+            <option>Any Type</option>
+          </select>
+          <select>
+            <option>Location</option>
+          </select>
+          <select>
+            <option>All State</option>
+          </select>
+          <select>
+            <option>All City</option>
+          </select>
+        </div>
 
-      <div class="details">
+        <div class="slider">
+          <h4>Price Range:</h4>
+          <mat-slider
+            class="example-margin"
+            [max]="10000"
+            [min]="1"
+            [step]="1">
+          </mat-slider>
+        </div>
+        <div class="slider">
+          <h4>Area Range:</h4>
+          <mat-slider
+            class="example-margin"
+            [max]="10000"
+            [min]="1"
+            [step]="1">
+          </mat-slider>
+        </div>
 
-        <p>
-          <span class="price"> {{item.RegularPrice  | currency:'R'}}</span>
-          <span class="name"> {{item.Name}}</span>
-          <span class="location"> Sandton</span>
-
-        </p>
+        <div class="">
+          <button mat-flat-button class="mat-danger" type="button">
+            Search Property
+          </button>
+        </div>
+        <br>
+        <hr>
       </div>
     </div>
   </div>

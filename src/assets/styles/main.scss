@@ -2,7 +2,7 @@
 @import './inputs';
 
 .main {
-  background: $white;
+  background: #F8F8F8;
   padding: 0;
   max-height: 100vh;
   // overflow-y: scroll;
@@ -11,7 +11,7 @@
 
 .main-list {
   max-height: 90vh;
-  background: $white;
+  background: #F8F8F8;
   padding: 2em 4em;
   overflow-y: scroll;
 

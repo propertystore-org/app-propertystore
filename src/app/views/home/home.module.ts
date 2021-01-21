@@ -13,6 +13,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {DashboardModule} from "../dashboard/dashboard.module";
+import {MatSliderModule} from "@angular/material/slider";
 
 @NgModule({
     imports: [
@@ -27,6 +28,7 @@ import {DashboardModule} from "../dashboard/dashboard.module";
         MatButtonModule,
         MatToolbarModule,
         DashboardModule,
+        MatSliderModule,
 
         // QuillModule.forRoot()
 
